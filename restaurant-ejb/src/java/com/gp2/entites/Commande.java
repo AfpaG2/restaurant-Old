@@ -6,11 +6,17 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -23,8 +29,22 @@ public class Commande implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false) 
     private Date dateCommande;
+    @OneToMany
+    private Collection<LigneCommande> LC;
+    @ManyToOne
+    //private Collection<Emplacement> emplacement;
+    @OneToMany
+    private Collection<Paiement> paiement;
+    @ManyToOne
+    private Collection<Statut> statut;
 
+    public Commande() {
+        this.LC = new ArrayList<>();
+    }
+    
+    
     public Date getDateCommande() {
         return dateCommande;
     }

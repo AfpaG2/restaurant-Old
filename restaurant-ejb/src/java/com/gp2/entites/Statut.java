@@ -6,10 +6,13 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -22,10 +25,20 @@ public class Statut implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @ManyToOne
+    private LigneCommande LC;
+    @Column(nullable = false) 
     private String nomStatut;
+    @Column(nullable = false) 
     private String valeurStatut;
+    @OneToMany
+    private Commande commande;
+    public Statut() {
+        
+    }
     
-
+    
+    
     public Long getId() {
         return id;
     }
@@ -34,6 +47,24 @@ public class Statut implements Serializable {
         this.id = id;
     }
 
+    public String getNomStatut() {
+        return nomStatut;
+    }
+
+    public void setNomStatut(String nomStatut) {
+        this.nomStatut = nomStatut;
+    }
+
+    public String getValeurStatut() {
+        return valeurStatut;
+    }
+
+    public void setValeurStatut(String valeurStatut) {
+        this.valeurStatut = valeurStatut;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 0;

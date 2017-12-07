@@ -6,10 +6,13 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -21,8 +24,11 @@ public class TypePlat implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String nom;
+    @ManyToOne
+    private Collection<Carte> carte;
+    @ManyToMany
+    private Collection<Produit> produit;
 
     public String getNom() {
         return nom;
