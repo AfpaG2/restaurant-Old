@@ -26,7 +26,6 @@ public class LigneCommande implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
     @Column(nullable = false) 
     private int quantite;
     @Column(nullable = false) 
@@ -34,12 +33,17 @@ public class LigneCommande implements Serializable {
     @Column(nullable = false) 
     private float prixHT;
     @OneToMany
-    private Collection<Statut> stat;
+    private Collection<Statut> statuts;
     @ManyToOne
     private Commande commande;
+    @OneToMany
+    private Collection<LigneCommande> ligneCommandes;
+    @ManyToOne
+    private Produit produit;
 
     public LigneCommande() {
-        this.stat = new ArrayList<>();
+        this.statuts = new ArrayList<>();
+        this.ligneCommandes = new ArrayList<>();
     }
     
     
@@ -66,6 +70,38 @@ public class LigneCommande implements Serializable {
 
     public void setPrixHT(float prixHT) {
         this.prixHT = prixHT;
+    }
+
+    public Collection<Statut> getStatuts() {
+        return statuts;
+    }
+
+    public void setStatuts(Collection<Statut> statuts) {
+        this.statuts = statuts;
+    }
+
+    public Commande getCommande() {
+        return commande;
+    }
+
+    public void setCommande(Commande commande) {
+        this.commande = commande;
+    }
+
+    public Collection<LigneCommande> getLigneCommandes() {
+        return ligneCommandes;
+    }
+
+    public void setLigneCommandes(Collection<LigneCommande> ligneCommandes) {
+        this.ligneCommandes = ligneCommandes;
+    }
+
+    public Produit getProduit() {
+        return produit;
+    }
+
+    public void setProduit(Produit produit) {
+        this.produit = produit;
     }
     
     

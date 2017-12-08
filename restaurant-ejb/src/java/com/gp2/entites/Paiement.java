@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 /**
@@ -24,9 +25,20 @@ public class Paiement implements Serializable {
     private Long id;
     private float montant;
     private int capacite;
-    @OneToOne
-    private Paiement paiement;
+    @ManyToOne
+    private Commande commande;
 
+    public Paiement() {
+    }
+
+    public Paiement(float montant, int capacite) {
+        this();
+        this.montant = montant;
+        this.capacite = capacite;
+    }
+
+    
+    
     public float getMontant() {
         return montant;
     }

@@ -28,20 +28,21 @@ public class Commande implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column(nullable = false) 
     private Date dateCommande;
     @OneToMany
-    private Collection<LigneCommande> LC;
+    private Collection<LigneCommande> ligneCommandes;
     //@ManyToOne
-    //private Collection<Emplacement> emplacement;
-    @OneToMany
-    private Collection<Paiement> paiement;
+    //private Emplacement emplacement;
+    @OneToMany(mappedBy = "commande")
+    private Collection<Paiement> paiements;
     @ManyToOne
-    private Collection<Statut> statut;
+    private Collection<Statut> statuts;
 
     public Commande() {
-        this.LC = new ArrayList<>();
+        this.ligneCommandes = new ArrayList<>();
+        this.paiements = new ArrayList<>();
+        this.paiements = new ArrayList<>();
     }
     
     
@@ -51,6 +52,30 @@ public class Commande implements Serializable {
 
     public void setDateCommande(Date dateCommande) {
         this.dateCommande = dateCommande;
+    }
+
+    public Collection<LigneCommande> getLigneCommandes() {
+        return ligneCommandes;
+    }
+
+    public void setLigneCommandes(Collection<LigneCommande> ligneCommandes) {
+        this.ligneCommandes = ligneCommandes;
+    }
+
+    public Collection<Paiement> getPaiements() {
+        return paiements;
+    }
+
+    public void setPaiements(Collection<Paiement> paiements) {
+        this.paiements = paiements;
+    }
+
+    public Collection<Statut> getStatuts() {
+        return statuts;
+    }
+
+    public void setStatuts(Collection<Statut> statuts) {
+        this.statuts = statuts;
     }
     
     

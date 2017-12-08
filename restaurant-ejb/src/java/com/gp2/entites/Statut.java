@@ -26,7 +26,7 @@ public class Statut implements Serializable {
     private Long id;
     
     @ManyToOne
-    private LigneCommande LC;
+    private LigneCommande ligneCommande;
     @Column(nullable = false) 
     private String nomStatut;
     @Column(nullable = false) 
@@ -36,6 +36,13 @@ public class Statut implements Serializable {
     public Statut() {
         
     }
+
+    public Statut(String nomStatut, String valeurStatut) {
+        this.nomStatut = nomStatut;
+        this.valeurStatut = valeurStatut;
+    }
+    
+    
     
     
     
