@@ -2,10 +2,12 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -17,7 +19,10 @@ public class Formule implements Serializable {
     private String nomFormul;
     private float prix;
     private String image;
-
+    
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private CodeTVA codeTVA;
+    
     public Long getId() {
         return id;
     }

@@ -3,10 +3,12 @@ package com.gp2.entites;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -19,7 +21,7 @@ public class Produit implements Serializable {
     private float prix;
     private String image;
     
-    
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private CodeTVA codeTVA;
     
     private List<InfosProduit> infosProduits;

@@ -3,10 +3,12 @@ package com.gp2.entites;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -15,13 +17,17 @@ public class CodeTVA implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String type;
     private float tauxTVA;
 
-    
+    // propriétés pour les associations
+    @OneToMany(mappedBy = "codeTVA")
     List<Produit> produits;
     
-    
+    // propriétés pour les associations
+    @OneToMany(mappedBy = "formule")
+    List<Formule> formules;
     
     public Long getId() {
         return id;
