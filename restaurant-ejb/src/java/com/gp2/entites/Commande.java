@@ -33,7 +33,7 @@ public class Commande implements Serializable {
     private Date dateCommande;
     @OneToMany
     private Collection<LigneCommande> LC;
-    @ManyToOne
+    //@ManyToOne
     //private Collection<Emplacement> emplacement;
     @OneToMany
     private Collection<Paiement> paiement;
