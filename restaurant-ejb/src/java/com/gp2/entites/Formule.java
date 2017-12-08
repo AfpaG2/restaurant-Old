@@ -2,12 +2,16 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -20,8 +24,20 @@ public class Formule implements Serializable {
     private float prix;
     private String image;
     
+    //propriétés pour les associations
+    @ManyToMany
+    Collection<TypePlat> typePlats;
+    
     @ManyToOne(cascade = CascadeType.PERSIST)
     private CodeTVA codeTVA;
+    
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private Carte carte;
+    
+    @OneToMany(mappedBy = "formule", cascade = CascadeType.PERSIST)
+    private Collection<LigneCommande> ligneCommandes;
+    
+    
     
     public Long getId() {
         return id;

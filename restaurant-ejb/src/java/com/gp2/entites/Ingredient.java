@@ -2,6 +2,7 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +20,7 @@ public class Ingredient implements Serializable {
     private float apportCalorique;
     private float quantité;
     
-    List<Produit> produits;
+    private Collection<Produit> produits;
 
     public Long getId() {
         return id;

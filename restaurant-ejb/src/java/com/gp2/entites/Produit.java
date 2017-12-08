@@ -2,13 +2,16 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -21,14 +24,28 @@ public class Produit implements Serializable {
     private float prix;
     private String image;
     
+    // propriétés pour les associations
     @ManyToOne(cascade = CascadeType.PERSIST)
     private CodeTVA codeTVA;
     
-    private List<InfosProduit> infosProduits;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private NatureProduit natureProduit;
     
-    private List<InfosCuisine> infosCuisines;
     
-    private List<Ingredient> ingredients;
+    @OneToMany(mappedBy = "produit", cascade = CascadeType.PERSIST)
+    private Collection<LigneCommande> ligneCommandes;
+    
+    @ManyToMany(mappedBy = "produits")
+    private Collection<InfosProduit> typePlats;
+    
+    @ManyToMany()
+    private Collection<InfosProduit> infosProduits;
+    
+    @ManyToMany
+    private Collection<InfosCuisine> infosCuisines;
+    
+    @ManyToMany
+    private Collection<Ingredient> ingredients;
     
     
     public Long getId() {

@@ -2,11 +2,13 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 
 @Entity
@@ -18,8 +20,9 @@ public class InfosCuisine implements Serializable {
     private String exigence;
     private String valeurExigence;
     
-    
-    List<Produit> produits;
+    //propriétés pour les associations
+    @ManyToMany(mappedBy = "infosCuisines")
+    private Collection<Produit> produits;
 
     public Long getId() {
         return id;

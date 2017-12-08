@@ -6,8 +6,10 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -19,6 +21,10 @@ public class NatureProduit implements Serializable {
     @Id   
     private String nomNatureProduit;
     
+    
+    
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private Carte carte;
 
     public String getNomNatureProduit() {
         return nomNatureProduit;

@@ -2,6 +2,7 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,14 +21,16 @@ public class CodeTVA implements Serializable {
     @Column(nullable = false)
     private String type;
     private float tauxTVA;
+    
+    
 
     // propriétés pour les associations
     @OneToMany(mappedBy = "codeTVA")
-    List<Produit> produits;
+    private Collection<Produit> produits;
     
-    // propriétés pour les associations
-    @OneToMany(mappedBy = "formule")
-    List<Formule> formules;
+    
+    @OneToMany(mappedBy = "codeTVA")
+    private Collection<Formule> formules;
     
     public Long getId() {
         return id;
