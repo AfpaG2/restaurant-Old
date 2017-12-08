@@ -7,8 +7,6 @@ package com.gp2.entites;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -32,25 +30,25 @@ public class NatureProduit implements Serializable {
     
    
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (nomNatureProduit != null ? nomNatureProduit.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof NatureProduit)) {
-            return false;
-        }
-        NatureProduit other = (NatureProduit) object;
-        if ((this.nomNatureProduit == null && other.nomNatureProduit != null) || (this.nomNatureProduit != null && !this.nomNatureProduit.equals(other.nomNatureProduit))) {
-            return false;
-        }
-        return true;
-    }
+//    @Override
+//    public int hashCode() {
+//        int hash = 0;
+//        hash += (nomNatureProduit != null ? nomNatureProduit.hashCode() : 0);
+//        return hash;
+//    }
+//
+//    @Override
+//    public boolean equals(Object object) {
+//        // TODO: Warning - this method won't work in the case the id fields are not set
+//        if (!(object instanceof NatureProduit)) {
+//            return false;
+//        }
+//        NatureProduit other = (NatureProduit) object;
+//        if ((this.nomNatureProduit == null && other.nomNatureProduit != null) || (this.nomNatureProduit != null && !this.nomNatureProduit.equals(other.nomNatureProduit))) {
+//            return false;
+//        }
+//        return true;
+//    }
 
     @Override
     public String toString() {

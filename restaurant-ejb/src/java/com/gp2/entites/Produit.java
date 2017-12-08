@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.gp2.entites;
 
 import java.io.Serializable;
@@ -12,27 +8,25 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- *
- * @author cdi314
- */
+
 @Entity
 public class Produit implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nomProduit;    
     private float prix;
     private String image;
     
     
+    private CodeTVA codeTVA;
     
-    List<InfosProduit> infosProduits;
+    private List<InfosProduit> infosProduits;
     
-    List<InfosCuisine> infosCuisines;
+    private List<InfosCuisine> infosCuisines;
     
-    List<Ingredient> ingredients;
+    private List<Ingredient> ingredients;
     
     
     public Long getId() {
