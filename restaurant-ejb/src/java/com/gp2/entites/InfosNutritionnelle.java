@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -17,7 +18,44 @@ public class InfosNutritionnelle implements Serializable {
     private String InfosNutritionnelle;
     private float valeur;
     
+    @ManyToOne
+    private Ingredient ingredient;
 
+    public InfosNutritionnelle() {
+    }
+
+    public InfosNutritionnelle(String InfosNutritionnelle, float valeur) {
+        this();
+        this.InfosNutritionnelle = InfosNutritionnelle;
+        this.valeur = valeur;
+    }
+
+    public String getInfosNutritionnelle() {
+        return InfosNutritionnelle;
+    }
+
+    public void setInfosNutritionnelle(String InfosNutritionnelle) {
+        this.InfosNutritionnelle = InfosNutritionnelle;
+    }
+
+    public float getValeur() {
+        return valeur;
+    }
+
+    public void setValeur(float valeur) {
+        this.valeur = valeur;
+    }
+
+    public Ingredient getIngredient() {
+        return ingredient;
+    }
+
+    public void setIngredient(Ingredient ingredient) {
+        this.ingredient = ingredient;
+    }
+    
+    
+    
     public Long getId() {
         return id;
     }

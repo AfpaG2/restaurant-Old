@@ -2,8 +2,8 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,19 +25,38 @@ public class Formule implements Serializable {
     private String image;
     
     //propriétés pour les associations
-    @ManyToMany
-    Collection<TypePlat> typePlats;
-    
     @ManyToOne(cascade = CascadeType.PERSIST)
     private CodeTVA codeTVA;
     
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Carte carte;
     
+//    @ManyToOne(cascade = CascadeType.PERSIST)
+//    private Poromotion promotion;
+    
     @OneToMany(mappedBy = "formule", cascade = CascadeType.PERSIST)
     private Collection<LigneCommande> ligneCommandes;
     
-    
+    @ManyToMany (mappedBy = "formules", cascade = CascadeType.PERSIST)
+    private Collection<TypePlat> typePlats;
+
+    public Formule() {
+        ligneCommandes = new ArrayList();
+        typePlats  = new ArrayList();
+    }
+
+    public Formule(String nomFormul, float prix) {
+        this();
+        this.nomFormul = nomFormul;
+        this.prix = prix;
+    }
+
+    public Formule(String nomFormul, float prix, String image) {
+        this();
+        this.nomFormul = nomFormul;
+        this.prix = prix;
+        this.image = image;
+    }
     
     public Long getId() {
         return id;
@@ -46,6 +65,64 @@ public class Formule implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public String getNomFormul() {
+        return nomFormul;
+    }
+
+    public void setNomFormul(String nomFormul) {
+        this.nomFormul = nomFormul;
+    }
+
+    public float getPrix() {
+        return prix;
+    }
+
+    public void setPrix(float prix) {
+        this.prix = prix;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public CodeTVA getCodeTVA() {
+        return codeTVA;
+    }
+
+    public void setCodeTVA(CodeTVA codeTVA) {
+        this.codeTVA = codeTVA;
+    }
+
+    public Carte getCarte() {
+        return carte;
+    }
+
+    public void setCarte(Carte carte) {
+        this.carte = carte;
+    }
+
+    public Collection<LigneCommande> getLigneCommandes() {
+        return ligneCommandes;
+    }
+
+    public void setLigneCommandes(Collection<LigneCommande> ligneCommandes) {
+        this.ligneCommandes = ligneCommandes;
+    }
+
+    public Collection<TypePlat> getTypePlats() {
+        return typePlats;
+    }
+
+    public void setTypePlats(Collection<TypePlat> typePlats) {
+        this.typePlats = typePlats;
+    }
+    
+    
 
 //    @Override
 //    public int hashCode() {

@@ -2,11 +2,13 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 
 @Entity
@@ -19,8 +21,60 @@ public class InfosProduit implements Serializable {
     private String valeur;
     private String unite;
             
+    //propriétés pour les associations
+    @ManyToMany(mappedBy = "infosProduits")
+    private Collection<Produit> produits;
+
+    public InfosProduit() {
+        produits = new ArrayList();
+    }
+
+    public InfosProduit(String nom, String valeur, String unite) {
+        this();
+        this.nom = nom;
+        this.valeur = valeur;
+        this.unite = unite;
+    }
+
+    public InfosProduit(String nom) {
+        this();
+        this.nom = nom;
+    }
     
-    List<Produit> produits;
+    
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getValeur() {
+        return valeur;
+    }
+
+    public void setValeur(String valeur) {
+        this.valeur = valeur;
+    }
+
+    public String getUnite() {
+        return unite;
+    }
+
+    public void setUnite(String unite) {
+        this.unite = unite;
+    }
+
+    public Collection<Produit> getProduits() {
+        return produits;
+    }
+
+    public void setProduits(Collection<Produit> produits) {
+        this.produits = produits;
+    }
+    
+    
     
     public Long getId() {
         return id;

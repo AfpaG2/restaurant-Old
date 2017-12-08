@@ -2,8 +2,8 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,15 +22,23 @@ public class CodeTVA implements Serializable {
     private String type;
     private float tauxTVA;
     
-    
-
     // propriétés pour les associations
     @OneToMany(mappedBy = "codeTVA")
     private Collection<Produit> produits;
     
-    
     @OneToMany(mappedBy = "codeTVA")
     private Collection<Formule> formules;
+
+    public CodeTVA() {
+        produits = new ArrayList();
+        formules = new ArrayList();
+    }
+
+    public CodeTVA(String type, float tauxTVA) {
+        this();
+        this.type = type;
+        this.tauxTVA = tauxTVA;
+    }
     
     public Long getId() {
         return id;
@@ -39,6 +47,40 @@ public class CodeTVA implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public float getTauxTVA() {
+        return tauxTVA;
+    }
+
+    public void setTauxTVA(float tauxTVA) {
+        this.tauxTVA = tauxTVA;
+    }
+
+    public Collection<Produit> getProduits() {
+        return produits;
+    }
+
+    public void setProduits(Collection<Produit> produits) {
+        this.produits = produits;
+    }
+
+    public Collection<Formule> getFormules() {
+        return formules;
+    }
+
+    public void setFormules(Collection<Formule> formules) {
+        this.formules = formules;
+    }
+    
+    
 
 //    @Override
 //    public int hashCode() {

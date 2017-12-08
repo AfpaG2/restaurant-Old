@@ -2,12 +2,14 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 
 @Entity
@@ -20,8 +22,27 @@ public class Ingredient implements Serializable {
     private float apportCalorique;
     private float quantité;
     
+    //propriétés pour les associations
+    @ManyToMany(mappedBy = "ingredients")
     private Collection<Produit> produits;
 
+    public Ingredient() {
+        produits = new ArrayList();
+    }
+
+    public Ingredient(String nomIngredient, float apportCalorique, float quantité) {
+        this();
+        this.nomIngredient = nomIngredient;
+        this.apportCalorique = apportCalorique;
+        this.quantité = quantité;
+    }
+
+    public Ingredient(String nomIngredient) {
+        this();
+        this.nomIngredient = nomIngredient;
+    }
+    
+    
     public Long getId() {
         return id;
     }
@@ -29,6 +50,40 @@ public class Ingredient implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public String getNomIngredient() {
+        return nomIngredient;
+    }
+
+    public void setNomIngredient(String nomIngredient) {
+        this.nomIngredient = nomIngredient;
+    }
+
+    public float getApportCalorique() {
+        return apportCalorique;
+    }
+
+    public void setApportCalorique(float apportCalorique) {
+        this.apportCalorique = apportCalorique;
+    }
+
+    public float getQuantité() {
+        return quantité;
+    }
+
+    public void setQuantité(float quantité) {
+        this.quantité = quantité;
+    }
+
+    public Collection<Produit> getProduits() {
+        return produits;
+    }
+
+    public void setProduits(Collection<Produit> produits) {
+        this.produits = produits;
+    }
+    
+    
 
 //    @Override
 //    public int hashCode() {

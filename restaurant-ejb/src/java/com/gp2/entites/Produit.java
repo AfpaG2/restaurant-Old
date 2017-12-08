@@ -2,8 +2,8 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,14 +29,14 @@ public class Produit implements Serializable {
     private CodeTVA codeTVA;
     
     @ManyToOne(cascade = CascadeType.PERSIST)
-    private NatureProduit natureProduit;
+    private NatureProduit naturePorduit;
     
     
     @OneToMany(mappedBy = "produit", cascade = CascadeType.PERSIST)
     private Collection<LigneCommande> ligneCommandes;
     
     @ManyToMany(mappedBy = "produits")
-    private Collection<InfosProduit> typePlats;
+    private Collection<TypePlat> typePlats;
     
     @ManyToMany()
     private Collection<InfosProduit> infosProduits;
@@ -46,7 +46,26 @@ public class Produit implements Serializable {
     
     @ManyToMany
     private Collection<Ingredient> ingredients;
-    
+
+    public Produit() {
+        ingredients = new ArrayList();
+        infosCuisines = new ArrayList();
+        infosProduits = new ArrayList();
+        typePlats = new ArrayList();
+        ligneCommandes = new ArrayList();
+    }
+
+    public Produit(String nomProduit) {
+        this();
+        this.nomProduit = nomProduit;
+    }
+
+    public Produit(String nomProduit, float prix, String image) {
+        this();
+        this.nomProduit = nomProduit;
+        this.prix = prix;
+        this.image = image;
+    }
     
     public Long getId() {
         return id;
@@ -55,6 +74,88 @@ public class Produit implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public String getNomProduit() {
+        return nomProduit;
+    }
+
+    public void setNomProduit(String nomProduit) {
+        this.nomProduit = nomProduit;
+    }
+
+    public float getPrix() {
+        return prix;
+    }
+
+    public void setPrix(float prix) {
+        this.prix = prix;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public CodeTVA getCodeTVA() {
+        return codeTVA;
+    }
+
+    public void setCodeTVA(CodeTVA codeTVA) {
+        this.codeTVA = codeTVA;
+    }
+
+    public NatureProduit getNaturePorduit() {
+        return naturePorduit;
+    }
+
+    public void setNaturePorduit(NatureProduit naturePorduit) {
+        this.naturePorduit = naturePorduit;
+    }
+
+    public Collection<LigneCommande> getLigneCommandes() {
+        return ligneCommandes;
+    }
+
+    public void setLigneCommandes(Collection<LigneCommande> ligneCommandes) {
+        this.ligneCommandes = ligneCommandes;
+    }
+
+    public Collection<TypePlat> getTypePlats() {
+        return typePlats;
+    }
+
+    public void setTypePlats(Collection<TypePlat> typePlats) {
+        this.typePlats = typePlats;
+    }
+
+    public Collection<InfosProduit> getInfosProduits() {
+        return infosProduits;
+    }
+
+    public void setInfosProduits(Collection<InfosProduit> infosProduits) {
+        this.infosProduits = infosProduits;
+    }
+
+    public Collection<InfosCuisine> getInfosCuisines() {
+        return infosCuisines;
+    }
+
+    public void setInfosCuisines(Collection<InfosCuisine> infosCuisines) {
+        this.infosCuisines = infosCuisines;
+    }
+
+    public Collection<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(Collection<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
+    
+    
 
 //    @Override
 //    public int hashCode() {

@@ -6,10 +6,13 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -21,10 +24,22 @@ public class NatureProduit implements Serializable {
     @Id   
     private String nomNatureProduit;
     
-    
-    
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Carte carte;
+    
+    @OneToMany(mappedBy = "naturePorduit")
+    private Collection<Produit> produits;
+
+    public NatureProduit() {
+        produits = new ArrayList();
+    }
+
+    public NatureProduit(String nomNatureProduit) {
+        this();
+        this.nomNatureProduit = nomNatureProduit;
+    }
+    
+    
 
     public String getNomNatureProduit() {
         return nomNatureProduit;
@@ -33,6 +48,24 @@ public class NatureProduit implements Serializable {
     public void setNomNatureProduit(String nomNatureProduit) {
         this.nomNatureProduit = nomNatureProduit;
     }
+
+    public Carte getCarte() {
+        return carte;
+    }
+
+    public void setCarte(Carte carte) {
+        this.carte = carte;
+    }
+
+    public Collection<Produit> getProduits() {
+        return produits;
+    }
+
+    public void setProduits(Collection<Produit> produits) {
+        this.produits = produits;
+    }
+    
+    
     
    
 
