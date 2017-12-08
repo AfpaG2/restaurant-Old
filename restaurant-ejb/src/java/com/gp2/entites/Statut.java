@@ -6,6 +6,7 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,15 +25,17 @@ public class Statut implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    @ManyToOne
-    private LigneCommande ligneCommande;
     @Column(nullable = false) 
     private String nomStatut;
     @Column(nullable = false) 
     private String valeurStatut;
-    @OneToMany
-    private Commande commande;
+    
+    @OneToMany(mappedBy = "statut")
+    private Collection<LigneCommande> ligneCommandes;
+    @OneToMany(mappedBy = "statut")
+    private Collection<Commande> commandes;
+    
+    
     public Statut() {
         
     }

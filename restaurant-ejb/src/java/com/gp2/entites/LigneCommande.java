@@ -32,8 +32,10 @@ public class LigneCommande implements Serializable {
     private float tva;
     @Column(nullable = false) 
     private float prixHT;
-    @OneToMany
-    private Collection<Statut> statuts;
+    
+    @ManyToOne
+    private Statut statut;
+    
     @ManyToOne
     private Commande commande;
     @OneToMany
@@ -41,8 +43,7 @@ public class LigneCommande implements Serializable {
     @ManyToOne
     private Produit produit;
 
-    public LigneCommande() {
-        this.statuts = new ArrayList<>();
+    public LigneCommande() {       
         this.ligneCommandes = new ArrayList<>();
     }
     
@@ -72,13 +73,15 @@ public class LigneCommande implements Serializable {
         this.prixHT = prixHT;
     }
 
-    public Collection<Statut> getStatuts() {
-        return statuts;
+    public Statut getStatut() {
+        return statut;
     }
 
-    public void setStatuts(Collection<Statut> statuts) {
-        this.statuts = statuts;
+    public void setStatut(Statut statut) {
+        this.statut = statut;
     }
+
+    
 
     public Commande getCommande() {
         return commande;

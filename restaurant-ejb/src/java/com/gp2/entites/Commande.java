@@ -30,19 +30,20 @@ public class Commande implements Serializable {
     private Long id;
     @Column(nullable = false) 
     private Date dateCommande;
+    
     @OneToMany
     private Collection<LigneCommande> ligneCommandes;
     //@ManyToOne
     //private Emplacement emplacement;
     @OneToMany(mappedBy = "commande")
     private Collection<Paiement> paiements;
+    
     @ManyToOne
-    private Collection<Statut> statuts;
+    private  Statut statut;
 
     public Commande() {
         this.ligneCommandes = new ArrayList<>();
-        this.paiements = new ArrayList<>();
-        this.paiements = new ArrayList<>();
+        this.paiements = new ArrayList<>();        
     }
     
     
@@ -70,14 +71,14 @@ public class Commande implements Serializable {
         this.paiements = paiements;
     }
 
-    public Collection<Statut> getStatuts() {
-        return statuts;
+    public Statut getStatut() {
+        return statut;
     }
 
-    public void setStatuts(Collection<Statut> statuts) {
-        this.statuts = statuts;
+    public void setStatut(Statut statut) {
+        this.statut = statut;
     }
-    
+
     
     
     
