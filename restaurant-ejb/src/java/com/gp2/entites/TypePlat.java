@@ -6,6 +6,7 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,18 +25,32 @@ public class TypePlat implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nom;
+    private String nomTypePlat;
     @ManyToOne
-    private Collection<Carte> carte;
+    private Collection<Carte> cartes;
     @ManyToMany
-    private Collection<Produit> produit;
+    private Collection<Produit> produits;
 
-    public String getNom() {
-        return nom;
+    public TypePlat() {
+        this.cartes = new ArrayList<>();
+        this.produits = new ArrayList<>();
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public TypePlat(String nomTypePlat) {
+        this();
+        this.nomTypePlat = nomTypePlat;
+    }
+    
+    
+
+    
+    
+    public String getnomTypePlat() {
+        return nomTypePlat;
+    }
+
+    public void setnomTypePlat(String nomTypePlat) {
+        this.nomTypePlat = nomTypePlat;
     }
     
     
@@ -48,6 +63,32 @@ public class TypePlat implements Serializable {
         this.id = id;
     }
 
+    public String getNomTypePlat() {
+        return nomTypePlat;
+    }
+
+    public void setNomTypePlat(String nomTypePlat) {
+        this.nomTypePlat = nomTypePlat;
+    }
+
+    public Collection<Carte> getCartes() {
+        return cartes;
+    }
+
+    public void setCartes(Collection<Carte> cartes) {
+        this.cartes = cartes;
+    }
+
+    public Collection<Produit> getProduits() {
+        return produits;
+    }
+
+    public void setProduits(Collection<Produit> produits) {
+        this.produits = produits;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 0;

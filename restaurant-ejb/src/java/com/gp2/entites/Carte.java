@@ -21,9 +21,16 @@ public class Carte implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String nomCarte;
+    private TypePlat typePlat;
 
+    public Carte() {
+        
+    }
+
+    
+    
+    
     public String getNomCarte() {
         return nomCarte;
     }
@@ -42,6 +49,14 @@ public class Carte implements Serializable {
         this.id = id;
     }
 
+    public TypePlat getTypePlat() {
+        return typePlat;
+    }
+
+    public void setTypePlat(TypePlat typePlat) {
+        this.typePlat = typePlat;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;
