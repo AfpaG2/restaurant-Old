@@ -4,6 +4,7 @@ package com.gp2.entites;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,7 +26,7 @@ public class Emplacement implements Serializable {
     private int capacite;
     
     // gestion des dependances
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     private Collection<Commande> commandes;
    
     @ManyToOne

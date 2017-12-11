@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,6 +38,12 @@ public class Commande implements Serializable {
     //private Emplacement emplacement;
     @OneToMany(mappedBy = "commande")
     private Collection<Paiement> paiements;
+    
+    @ManyToOne
+    private Emplacement emplacement;
+    
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Employe employe;
     
     @ManyToOne
     private  Statut statut;

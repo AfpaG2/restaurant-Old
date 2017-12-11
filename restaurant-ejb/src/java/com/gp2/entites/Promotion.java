@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -41,10 +42,10 @@ public class Promotion implements Serializable {
     private float pourcentageRemise;
     
     // Gestion des dependances
-    @OneToMany
+    @OneToMany(mappedBy = "promotion", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Formule> formules;
 
-    @OneToMany
+    @OneToMany(mappedBy = "promotion", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Produit> produits;
     
     public Promotion() {

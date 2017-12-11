@@ -46,6 +46,9 @@ public class Produit implements Serializable {
     
     @ManyToMany
     private Collection<Ingredient> ingredients;
+    
+    @ManyToOne
+    private Promotion promotion;
 
     public Produit() {
         ingredients = new ArrayList();
@@ -53,6 +56,7 @@ public class Produit implements Serializable {
         infosProduits = new ArrayList();
         typePlats = new ArrayList();
         ligneCommandes = new ArrayList();
+        promotion = new Promotion();
     }
 
     public Produit(String nomProduit) {

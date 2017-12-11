@@ -4,6 +4,7 @@ package com.gp2.entites;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -25,7 +26,7 @@ public class Poste implements Serializable {
     private String description;
     
     // Gestion des dependances
-    @OneToMany
+    @OneToMany(mappedBy = "poste", cascade = CascadeType.PERSIST)
     private Collection<Employe> employes;
 
     public Poste() {

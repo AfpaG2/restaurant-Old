@@ -6,13 +6,14 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
@@ -32,22 +33,25 @@ public class Statut implements Serializable {
     
     @OneToMany(mappedBy = "statut")
     private Collection<LigneCommande> ligneCommandes;
-    @OneToMany(mappedBy = "statut")
+    
+    @OneToMany(mappedBy = "statut", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Commande> commandes;
     
+    @OneToMany(mappedBy = "statut", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Collection<Emplacement> emplacements;
     
     public Statut() {
+        ligneCommandes = new ArrayList<>();
+        commandes = new ArrayList<>();
+        emplacements = new ArrayList<>();
         
     }
 
     public Statut(String nomStatut, String valeurStatut) {
+        this();
         this.nomStatut = nomStatut;
         this.valeurStatut = valeurStatut;
     }
-    
-    
-    
-    
     
     public Long getId() {
         return id;

@@ -4,11 +4,11 @@ package com.gp2.entites;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
 
 /**
@@ -36,7 +36,7 @@ public class Restaurant implements Serializable {
     private String email;
     
     // Gestion des dependances
-    @OneToMany
+    @OneToMany(mappedBy = "restaurant", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Employe> employes;
 
     public Restaurant() {

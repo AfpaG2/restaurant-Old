@@ -39,11 +39,16 @@ public class Formule implements Serializable {
     
     @ManyToMany (mappedBy = "formules", cascade = CascadeType.PERSIST)
     private Collection<TypePlat> typePlats;
+    
+    @ManyToOne
+    private Promotion promotion;
 
     public Formule() {
         ligneCommandes = new ArrayList();
         typePlats  = new ArrayList();
+        promotion = new Promotion();
     }
+    
 
     public Formule(String nomFormul, float prix) {
         this();
