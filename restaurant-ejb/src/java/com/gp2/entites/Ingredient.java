@@ -19,8 +19,7 @@ public class Ingredient implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nomIngredient;
-    private float apportCalorique;
-    private float quantité;
+    private float apportCalorique;    
     
     //propriétés pour les associations
     @ManyToMany(mappedBy = "ingredients")
@@ -30,11 +29,11 @@ public class Ingredient implements Serializable {
         produits = new ArrayList();
     }
 
-    public Ingredient(String nomIngredient, float apportCalorique, float quantité) {
+    public Ingredient(String nomIngredient, float apportCalorique) {
         this();
         this.nomIngredient = nomIngredient;
         this.apportCalorique = apportCalorique;
-        this.quantité = quantité;
+        
     }
 
     public Ingredient(String nomIngredient) {
@@ -65,14 +64,6 @@ public class Ingredient implements Serializable {
 
     public void setApportCalorique(float apportCalorique) {
         this.apportCalorique = apportCalorique;
-    }
-
-    public float getQuantité() {
-        return quantité;
-    }
-
-    public void setQuantité(float quantité) {
-        this.quantité = quantité;
     }
 
     public Collection<Produit> getProduits() {

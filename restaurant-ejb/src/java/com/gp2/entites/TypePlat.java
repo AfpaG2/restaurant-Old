@@ -27,23 +27,23 @@ public class TypePlat implements Serializable {
     private Long id;
     private String nomTypePlat;
     @ManyToOne
-    private Collection<Carte> cartes;
+    private Carte carte;
+    
     @ManyToMany
     private Collection<Produit> produits;
+    
+    @ManyToMany
+    private Collection<Formule> formules;
 
-    public TypePlat() {
-        this.cartes = new ArrayList<>();
+    public TypePlat() {        
         this.produits = new ArrayList<>();
+        this.formules = new ArrayList<>();
     }
 
     public TypePlat(String nomTypePlat) {
         this();
         this.nomTypePlat = nomTypePlat;
     }
-    
-    
-
-    
     
     public String getnomTypePlat() {
         return nomTypePlat;
@@ -71,13 +71,15 @@ public class TypePlat implements Serializable {
         this.nomTypePlat = nomTypePlat;
     }
 
-    public Collection<Carte> getCartes() {
-        return cartes;
+    public Carte getCarte() {
+        return carte;
     }
 
-    public void setCartes(Collection<Carte> cartes) {
-        this.cartes = cartes;
+    public void setCarte(Carte carte) {
+        this.carte = carte;
     }
+
+    
 
     public Collection<Produit> getProduits() {
         return produits;

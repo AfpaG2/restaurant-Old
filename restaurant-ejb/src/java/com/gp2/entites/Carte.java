@@ -6,10 +6,13 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -22,10 +25,17 @@ public class Carte implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nomCarte;
-    private TypePlat typePlat;
+    
+    @OneToMany(mappedBy = "carte")
+    private Collection <TypePlat> typePlats;
 
     public Carte() {
-        
+        typePlats = new ArrayList();
+    }
+
+    public Carte(String nomCarte) {
+        this();
+        this.nomCarte = nomCarte;
     }
 
     
@@ -49,13 +59,15 @@ public class Carte implements Serializable {
         this.id = id;
     }
 
-    public TypePlat getTypePlat() {
-        return typePlat;
+    public Collection<TypePlat> getTypePlats() {
+        return typePlats;
     }
 
-    public void setTypePlat(TypePlat typePlat) {
-        this.typePlat = typePlat;
+    public void setTypePlats(Collection<TypePlat> typePlats) {
+        this.typePlats = typePlats;
     }
+
+    
     
     @Override
     public int hashCode() {
