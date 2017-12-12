@@ -17,10 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-/**
- *
- * @author cdi307
- */
+
 @Entity
 public class LigneCommande implements Serializable {
     private static final long serialVersionUID = 1L;

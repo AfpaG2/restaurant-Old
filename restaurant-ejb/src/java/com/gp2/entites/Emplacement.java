@@ -30,11 +30,10 @@ public class Emplacement implements Serializable {
     private Collection<Commande> commandes;
    
     @ManyToOne
-    private Collection<Statut> statuts;
+    private Statut statut;
 
     public Emplacement() {
         commandes = new ArrayList<>();
-        statuts = new ArrayList<>();
     }
 
     public Emplacement(String NumeroTable, int capacite) {
@@ -58,6 +57,25 @@ public class Emplacement implements Serializable {
     public void setCapacite(int capacite) {
         this.capacite = capacite;
     }
+
+    public Collection<Commande> getCommandes() {
+        return commandes;
+    }
+
+    public void setCommandes(Collection<Commande> commandes) {
+        this.commandes = commandes;
+    }
+
+    public Statut getStatut() {
+        return statut;
+    }
+
+    public void setStatut(Statut statut) {
+        this.statut = statut;
+    }
+    
+    
+    
 
     @Override
     public String toString() {
