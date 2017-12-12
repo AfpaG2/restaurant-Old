@@ -2,7 +2,27 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="restaurant-ejbPU" transaction-type="JTA">
     <jta-data-source>jdbc/restaurantDS</jta-data-source>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <class>com.gp2.entites.Carte</class>
+    <class>com.gp2.entites.CodeTVA</class>
+    <class>com.gp2.entites.Commande</class>
+    <class>com.gp2.entites.Emplacement</class>
+    <class>com.gp2.entites.Employe</class>
+    <class>com.gp2.entites.Formule</class>
+    <class>com.gp2.entites.InfosCuisine</class>
+    <class>com.gp2.entites.InfosNutritionnelle</class>
+    <class>com.gp2.entites.InfosProduit</class>
+    <class>com.gp2.entites.Ingredient</class>
+    <class>com.gp2.entites.LigneCommande</class>
+    <class>com.gp2.entites.NatureProduit</class>
+    <class>com.gp2.entites.Paiement</class>
+    <class>com.gp2.entites.Poste</class>
+    <class>com.gp2.entites.Produit</class>
+    <class>com.gp2.entites.Promotion</class>
+    <class>com.gp2.entites.Restaurant</class>
+    <class>com.gp2.entites.Statut</class>
+    <class>com.gp2.entites.TypePaiement</class>
+    <class>com.gp2.entites.TypePlat</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
     </properties>

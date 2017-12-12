@@ -5,8 +5,6 @@ import com.gp2.entites.Ingredient;
 import com.gp2.entites.NatureProduit;
 import com.gp2.entites.Produit;
 import com.gp2.entites.TypePlat;
-import java.util.ArrayList;
-import java.util.Collection;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -19,9 +17,6 @@ public class CreationData implements CreationDataLocal {
 
     @Override
     public void creerDonnees() {
-
-  @Override
-   public void creerDonnees(){
        
         Ingredient ing01 = new Ingredient("Boeuf");
         Ingredient ing02 = new Ingredient("Nouilles de riz");
@@ -59,7 +54,7 @@ public class CreationData implements CreationDataLocal {
         Ingredient ing012 = new Ingredient("Cacahuètes");
         Ingredient ing013 = new Ingredient("Echalote");                      
         Ingredient ing014 = new Ingredient("Citrons");      
-        Ingredient ing017 = new Ingredient("Sauce nuoc mam");
+        Ingredient ing017 = new Ingredient("Sauce Nuoc Mam");
         Ingredient ing018 = new Ingredient("Tabasco");
         Ingredient ing019 = new Ingredient("Blancs de poulet");
         Ingredient ing020 = new Ingredient("Tomates");
@@ -80,9 +75,73 @@ public class CreationData implements CreationDataLocal {
         Ingredient ing037 = new Ingredient("Cacine de lotus");
         Ingredient ing039 = new Ingredient("Poivron rouge");                       
         Ingredient ing040 = new Ingredient("vinaigre blanc de riz");
-        Ingredient ing041 = new Ingredient("sucre");      
-            
+        Ingredient ing041 = new Ingredient("sucre"); 
         
+        
+        // Ingredients rajoutés par Ibrahim
+        Ingredient ing150 = new Ingredient("Pates de riz");     
+        Ingredient ing151 = new Ingredient("Filet de Boeuf");
+        Ingredient ing152 = new Ingredient("Pousse de Haricot Mungo");
+        Ingredient ing153 = new Ingredient("Ciboulettes");
+        Ingredient ing154 = new Ingredient("Sauce de Soja");
+        Ingredient ing155 = new Ingredient("Huile");
+        Ingredient ing156 = new Ingredient("Sésame");
+
+        Ingredient ing157 = new Ingredient("Oeufs");
+        Ingredient ing158 = new Ingredient("Huile Tournesol");
+        Ingredient ing159 = new Ingredient("Sauce Maggi");
+        Ingredient ing160 = new Ingredient("Jambon en dés");
+        Ingredient ing161 = new Ingredient("Petits Pois");
+        Ingredient ing162 = new Ingredient("Gros Oignon");
+        Ingredient ing163 = new Ingredient("riz");
+
+        Ingredient ing164 = new Ingredient("Poivre Noir");
+        Ingredient ing165 = new Ingredient("Batavia");
+        Ingredient ing166 = new Ingredient("Tige Menthe");
+        Ingredient ing167 = new Ingredient("Petits Nems");
+        Ingredient ing168 = new Ingredient("Boeuf Tendre");
+        Ingredient ing169 = new Ingredient("Tige de Coriandre");
+        Ingredient ing170 = new Ingredient("Vermicelles de riz");
+
+        Ingredient ing171 = new Ingredient("Caramel Maison");
+        Ingredient ing172 = new Ingredient("Poitrine de Porc");
+        Ingredient ing173 = new Ingredient("Champignons noirs réhydratés");
+        Ingredient ing174 = new Ingredient("Courgette");
+        Ingredient ing175 = new Ingredient("Vermicelles chinois");
+        Ingredient ing176 = new Ingredient("Feuilles de riz");
+        Ingredient ing177 = new Ingredient("Huile d'arachide");
+        Ingredient ing178 = new Ingredient("Poivron Vert");
+        Ingredient ing179 = new Ingredient("RumSteack ou Noix de Basse Côte");
+
+        Ingredient ing180 = new Ingredient("Haut de cuisse (paquet de trois)");
+        Ingredient ing181 = new Ingredient("Echalotes coupées finement");
+        Ingredient ing182 = new Ingredient("Boite de pâte Wong ton");
+        Ingredient ing183 = new Ingredient("Porc haché maigre cru");
+        Ingredient ing184 = new Ingredient("Bouillon de poulet fait maison");
+
+
+        Ingredient ing185 = new Ingredient("Oignon Blanc");
+        Ingredient ing186 = new Ingredient("Purée de Tamarin");
+        Ingredient ing187 = new Ingredient("Cacahuètes concassées");
+        Ingredient ing188 = new Ingredient("Nouilles de Riz");
+        Ingredient ing189 = new Ingredient("Filet de Poulet");
+        Ingredient ing190 = new Ingredient("Pousse d'épinards fraiches");
+        Ingredient ing191 = new Ingredient("Gingembre en poudre");
+        Ingredient ing192 = new Ingredient("Curcumin");
+        Ingredient ing193 = new Ingredient("Ail écrasé");
+        
+        Ingredient ing194 = new Ingredient("Nouilles aux oeufs Suzi Wan");
+        Ingredient ing195 = new Ingredient("blanc de poulet");
+        Ingredient ing196 = new Ingredient("Vinaigre Balsamique");
+        Ingredient ing197 = new Ingredient("Légumes shop suey");
+        Ingredient ing198 = new Ingredient("Germes de soja ");
+        Ingredient ing199 = new Ingredient("Huile végétale");
+        Ingredient ing200 = new Ingredient("Bouillon de poulet fait maison");
+        Ingredient ing201 = new Ingredient("Bouillon de poulet fait maison");
+        Ingredient ing202 = new Ingredient("Bouillon de poulet fait maison");   
+        
+
+
         InfosProduit infosPr01 = new InfosProduit("volume","50","cl");
         InfosProduit infosPr02 = new InfosProduit("volume","12.5","cl");
         InfosProduit infosPr03 = new InfosProduit("volume","50","cl");
@@ -295,6 +354,7 @@ public class CreationData implements CreationDataLocal {
         //                                        PLATS                                     |
         //==================================================================================|
         TypePlat tp05 = new TypePlat("PLATS");
+        
         Produit produ1 = new Produit("Pâtes blanches de riz sautées au poulet mariné au gingembre et crevettes", 16.2f);
         Produit produ2 = new Produit("Pâtes blanches de riz sautées au poulet mariné au gingembre", 13.9f);
         Produit produ3 = new Produit("Pâtes blanches de riz sautées aux crevettes", 14.9f);
@@ -310,152 +370,132 @@ public class CreationData implements CreationDataLocal {
         //                   CREATION D'INGREDIENTS COMPOSANT LES PLATS                     |
         //==================================================================================|
         
-        // Creation du plat 4.
-        Ingredient produit4Ingredient1 = new Ingredient("Pates de riz");
-        Ingredient produit4Ingredient2 = new Ingredient("Filet de Boeuf");
-        Ingredient produit4Ingredient3 = new Ingredient("Carotte");
-        Ingredient produit4Ingredient4 = new Ingredient("Pousse de Haricot Mungo");
-        Ingredient produit4Ingredient5 = new Ingredient("Oignon");
-        Ingredient produit4Ingredient6 = new Ingredient("Ciboulettes");
-        Ingredient produit4Ingredient7 = new Ingredient("Tranches de Gingembre");
-        Ingredient produit4Ingredient8 = new Ingredient("Sauce de Soja");
-        Ingredient produit4Ingredient9 = new Ingredient("Huile");
-        Ingredient produit4Ingredient10 = new Ingredient("Sésame");
+        // Creation du plat 1
+        produ1.getIngredients().add(ing194);
+        produ1.getIngredients().add(ing036);
+        produ1.getIngredients().add(ing195);
+        produ1.getIngredients().add(ing023);
+        produ1.getIngredients().add(ing032);
+        produ1.getIngredients().add(ing154);
+        produ1.getIngredients().add(ing196);
+        produ1.getIngredients().add(ing197);
+        produ1.getIngredients().add(ing002);
+        produ1.getIngredients().add(ing198);
+        produ1.getIngredients().add(ing017);
+        produ1.getIngredients().add(ing199);
+        produ1.getIngredients().add(ing153);
+        produ1.getIngredients().add(ing026);
         
-        produ5.getIngredients().add(produit4Ingredient1);
-        produ5.getIngredients().add(produit4Ingredient2);
-        produ5.getIngredients().add(produit4Ingredient3);
-        produ5.getIngredients().add(produit4Ingredient4);
-        produ5.getIngredients().add(produit4Ingredient5);
-        produ5.getIngredients().add(produit4Ingredient6);
-        produ5.getIngredients().add(produit4Ingredient7);
-        produ5.getIngredients().add(produit4Ingredient8);
-        produ5.getIngredients().add(produit4Ingredient9);
-        produ5.getIngredients().add(produit4Ingredient10);
+        
+        // Creation du plat 2
+        produ2.getIngredients().add(ing188);
+        produ2.getIngredients().add(ing189);
+        produ2.getIngredients().add(ing190);
+        produ2.getIngredients().add(ing173);
+        produ2.getIngredients().add(ing154);
+        produ2.getIngredients().add(ing025);
+        produ2.getIngredients().add(ing027);
+        produ2.getIngredients().add(ing07);
+        produ2.getIngredients().add(ing154);
+        produ2.getIngredients().add(ing155);
+        produ2.getIngredients().add(ing191);
+        produ2.getIngredients().add(ing192);
+        produ2.getIngredients().add(ing022);
+        produ2.getIngredients().add(ing023);
+        produ2.getIngredients().add(ing193);
+        
+        
+        // Creation du plat 3
+        produ3.getIngredients().add(ing150);
+        produ3.getIngredients().add(ing036);
+        produ3.getIngredients().add(ing185);
+        produ3.getIngredients().add(ing002);
+        produ3.getIngredients().add(ing177);
+        produ3.getIngredients().add(ing186);
+        produ3.getIngredients().add(ing017);
+        produ3.getIngredients().add(ing154);
+        produ3.getIngredients().add(ing034);
+        produ3.getIngredients().add(ing041);
+        produ3.getIngredients().add(ing187);
+        produ3.getIngredients().add(ing169);
+        produ3.getIngredients().add(ing07);
+        
+        
+        // Creation du plat 4.
+        produ4.getIngredients().add(ing150);
+        produ4.getIngredients().add(ing151);
+        produ4.getIngredients().add(ing005);
+        produ4.getIngredients().add(ing152);
+        produ4.getIngredients().add(ing032);
+        produ4.getIngredients().add(ing153);
+        produ4.getIngredients().add(ing023);
+        produ4.getIngredients().add(ing154);
+        produ4.getIngredients().add(ing155);
+        produ4.getIngredients().add(ing156);
         
         // Creation du plat 5.
-        Ingredient produit5Ingredient1 = new Ingredient("Oeufs");
-        Ingredient produit5Ingredient2 = new Ingredient("Huile Tournesol");
-        Ingredient produit5Ingredient3 = new Ingredient("Sauce Maggi");
-        Ingredient produit5Ingredient4 = new Ingredient("Sel");
-        Ingredient produit5Ingredient5 = new Ingredient("Gousse d'Ail");
-        Ingredient produit5Ingredient6 = new Ingredient("Poivre");
-        Ingredient produit5Ingredient7 = new Ingredient("Jambon en dés");
-        Ingredient produit5Ingredient8 = new Ingredient("Petits Pois");
-        Ingredient produit5Ingredient9 = new Ingredient("Gros Oignons");
-        Ingredient produit5Ingredient10 = new Ingredient("Riz");
-        
-        produ5.getIngredients().add(produit5Ingredient1);
-        produ5.getIngredients().add(produit5Ingredient2);
-        produ5.getIngredients().add(produit5Ingredient3);
-        produ5.getIngredients().add(produit5Ingredient4);
-        produ5.getIngredients().add(produit5Ingredient5);
-        produ5.getIngredients().add(produit5Ingredient6);
-        produ5.getIngredients().add(produit5Ingredient7);
-        produ5.getIngredients().add(produit5Ingredient8);
-        produ5.getIngredients().add(produit5Ingredient9);
-        produ5.getIngredients().add(produit5Ingredient10);
+        produ5.getIngredients().add(ing157);
+        produ5.getIngredients().add(ing158);
+        produ5.getIngredients().add(ing159);
+        produ5.getIngredients().add(ing027);
+        produ5.getIngredients().add(ing002);
+        produ5.getIngredients().add(ing026);
+        produ5.getIngredients().add(ing160);
+        produ5.getIngredients().add(ing161);
+        produ5.getIngredients().add(ing162);
+        produ5.getIngredients().add(ing163);
         
         // Creation du plat 6.
-        Ingredient produit6Ingredient1 = new Ingredient("Concombre");
-        Ingredient produit6Ingredient2 = new Ingredient("Nuoc Mam");
-        Ingredient produit6Ingredient3 = new Ingredient("Gousse d'ail");
-        Ingredient produit6Ingredient4 = new Ingredient("Poivre Noir");
-        Ingredient produit6Ingredient5 = new Ingredient("Batavia");
-        Ingredient produit6Ingredient6 = new Ingredient("Tiges Menthe");
-        Ingredient produit6Ingredient7 = new Ingredient("Petits Nems");
-        Ingredient produit6Ingredient8 = new Ingredient("Huile");
-        Ingredient produit6Ingredient9 = new Ingredient("Boeuf Tendre");
-        Ingredient produit6Ingredient10 = new Ingredient("Tige de Coriandre");
-        Ingredient produit6Ingredient11 = new Ingredient("Sel");
-        Ingredient produit6Ingredient12 = new Ingredient("Sucre");
-        Ingredient produit6Ingredient13 = new Ingredient("Piment");
-        Ingredient produit6Ingredient14 = new Ingredient("Sucre");
-        Ingredient produit6Ingredient15 = new Ingredient("Citron Vert");
-        Ingredient produit6Ingredient16 = new Ingredient("Cacahuetes");
-        Ingredient produit6Ingredient17 = new Ingredient("Vermicelles de riz");
-        
-        produ6.getIngredients().add(produit6Ingredient1);
-        produ6.getIngredients().add(produit6Ingredient2);
-        produ6.getIngredients().add(produit6Ingredient3);
-        produ6.getIngredients().add(produit6Ingredient4);
-        produ6.getIngredients().add(produit6Ingredient5);
-        produ6.getIngredients().add(produit6Ingredient6);
-        produ6.getIngredients().add(produit6Ingredient7);
-        produ6.getIngredients().add(produit6Ingredient8);
-        produ6.getIngredients().add(produit6Ingredient9);
-        produ6.getIngredients().add(produit6Ingredient10);
-        produ6.getIngredients().add(produit6Ingredient11);
-        produ6.getIngredients().add(produit6Ingredient12);
-        produ6.getIngredients().add(produit6Ingredient13);
-        produ6.getIngredients().add(produit6Ingredient14);
-        produ6.getIngredients().add(produit6Ingredient15);
-        produ6.getIngredients().add(produit6Ingredient16);
-        produ6.getIngredients().add(produit6Ingredient17);
+        produ6.getIngredients().add(ing004);
+        produ6.getIngredients().add(ing017);
+        produ6.getIngredients().add(ing002);
+        produ6.getIngredients().add(ing164);
+        produ6.getIngredients().add(ing165);
+        produ6.getIngredients().add(ing166);
+        produ6.getIngredients().add(ing167);
+        produ6.getIngredients().add(ing155);
+        produ6.getIngredients().add(ing168);
+        produ6.getIngredients().add(ing169);
+        produ6.getIngredients().add(ing027);
+        produ6.getIngredients().add(ing041);
+        produ6.getIngredients().add(ing034);
+        produ6.getIngredients().add(ing07);
+        produ6.getIngredients().add(ing012);
+        produ6.getIngredients().add(ing170);
         
         // Creation du plat 7.
-        Ingredient produit7Ingredient1 = new Ingredient("Nuoc Mam");
-        Ingredient produit7Ingredient2 = new Ingredient("Sel");
-        Ingredient produit7Ingredient3 = new Ingredient("Poivre");
-        Ingredient produit7Ingredient4 = new Ingredient("Caramel Maison");
-        Ingredient produit7Ingredient5 = new Ingredient("Gousse d'Ail");
-        Ingredient produit7Ingredient6 = new Ingredient("Gros Oignon");
-        Ingredient produit7Ingredient7 = new Ingredient("Poitrine de Porc");
-        
-        produ7.getIngredients().add(produit7Ingredient1);
-        produ7.getIngredients().add(produit7Ingredient2);
-        produ7.getIngredients().add(produit7Ingredient3);
-        produ7.getIngredients().add(produit7Ingredient4);
-        produ7.getIngredients().add(produit7Ingredient5);
-        produ7.getIngredients().add(produit7Ingredient6);
-        produ7.getIngredients().add(produit7Ingredient7);
+        produ7.getIngredients().add(ing017);
+        produ7.getIngredients().add(ing027);
+        produ7.getIngredients().add(ing026);
+        produ7.getIngredients().add(ing171);
+        produ7.getIngredients().add(ing002);
+        produ7.getIngredients().add(ing162);
+        produ7.getIngredients().add(ing172);
         
         // Creation du plat 8.
-        Ingredient produit8Ingredient1 = new Ingredient("Carotte");
-        Ingredient produit8Ingredient2 = new Ingredient("Gros Oignon");
-        Ingredient produit8Ingredient3 = new Ingredient("Champignons noirs réhydratés");
-        Ingredient produit8Ingredient4 = new Ingredient("Curry");
-        Ingredient produit8Ingredient5 = new Ingredient("Courgette");
-        Ingredient produit8Ingredient6 = new Ingredient("Vermicelles chinois");
-        Ingredient produit8Ingredient7 = new Ingredient("Feuilles de riz");
-        
-        produ8.getIngredients().add(produit8Ingredient1);
-        produ8.getIngredients().add(produit8Ingredient2);
-        produ8.getIngredients().add(produit8Ingredient3);
-        produ8.getIngredients().add(produit8Ingredient4);
-        produ8.getIngredients().add(produit8Ingredient5);
-        produ8.getIngredients().add(produit8Ingredient6);
-        produ8.getIngredients().add(produit8Ingredient7);
+        produ8.getIngredients().add(ing005);
+        produ8.getIngredients().add(ing162);
+        produ8.getIngredients().add(ing173);
+        produ8.getIngredients().add(ing022);
+        produ8.getIngredients().add(ing174);
+        produ8.getIngredients().add(ing175);
+        produ8.getIngredients().add(ing176);
         
         // Creation du plat 9.
-        Ingredient produit9Ingredient1 = new Ingredient("Nuoc Mam");
-        Ingredient produit9Ingredient2 = new Ingredient("Huile d'Arachide");
-        Ingredient produit9Ingredient3 = new Ingredient("Poivron Vert");
-        Ingredient produit9Ingredient4 = new Ingredient("Oignons");
-        Ingredient produit9Ingredient5 = new Ingredient("RumSteack ou Noix de Basse Côte");
-
-        produ9.getIngredients().add(produit9Ingredient1);
-        produ9.getIngredients().add(produit9Ingredient2);
-        produ9.getIngredients().add(produit9Ingredient3);
-        produ9.getIngredients().add(produit9Ingredient4);
-        produ9.getIngredients().add(produit9Ingredient5);
+        produ9.getIngredients().add(ing017);
+        produ9.getIngredients().add(ing177);
+        produ9.getIngredients().add(ing178);
+        produ9.getIngredients().add(ing032);
+        produ9.getIngredients().add(ing179);
 
         // Creation du plat 10.
-        Ingredient produit10Ingredient1 = new Ingredient("Sauce Soya");
-        Ingredient produit10Ingredient2 = new Ingredient("Oeuf");
-        Ingredient produit10Ingredient3 = new Ingredient("Haut de cuisse (paquet de trois)");
-        Ingredient produit10Ingredient4 = new Ingredient("Echalotes coupées finement");
-        Ingredient produit10Ingredient5 = new Ingredient("Boite de pâte Wong ton");
-        Ingredient produit10Ingredient6 = new Ingredient("Porc haché maigre cru");
-        Ingredient produit10Ingredient7 = new Ingredient("Bouillon de poulet fait maison");
-
-        produ10.getIngredients().add(produit10Ingredient1);
-        produ10.getIngredients().add(produit10Ingredient2);
-        produ10.getIngredients().add(produit10Ingredient3);
-        produ10.getIngredients().add(produit10Ingredient4);
-        produ10.getIngredients().add(produit10Ingredient5);
-        produ10.getIngredients().add(produit10Ingredient6);
-        produ10.getIngredients().add(produit10Ingredient7);
+        produ10.getIngredients().add(ing154);
+        produ10.getIngredients().add(ing157);
+        produ10.getIngredients().add(ing180);
+        produ10.getIngredients().add(ing181);
+        produ10.getIngredients().add(ing182);
+        produ10.getIngredients().add(ing183);
+        produ10.getIngredients().add(ing184);
 
         //==================================================================================|
         //                                        DESSERTS                                  |

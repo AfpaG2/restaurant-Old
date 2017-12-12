@@ -5,7 +5,6 @@
  */
 package controleurs.secondaires;
 
-import com.gp2.data.CreationData;
 import com.gp2.data.CreationDataLocal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
