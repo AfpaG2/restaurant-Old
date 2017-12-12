@@ -94,6 +94,16 @@ public class Restaurant implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Collection<Employe> getEmployes() {
+        return employes;
+    }
+
+    public void setEmployes(Collection<Employe> employes) {
+        this.employes = employes;
+    }
+    
+    
     
     @Override
     public String toString() {

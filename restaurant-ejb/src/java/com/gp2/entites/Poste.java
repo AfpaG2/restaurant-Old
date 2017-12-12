@@ -55,6 +55,14 @@ public class Poste implements Serializable {
         this.description = description;
     }
 
+    public Collection<Employe> getEmployes() {
+        return employes;
+    }
+
+    public void setEmployes(Collection<Employe> employes) {
+        this.employes = employes;
+    }
+
     @Override
     public String toString() {
         return "(" + this.nomPoste + " )";
