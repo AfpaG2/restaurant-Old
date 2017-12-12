@@ -46,6 +46,22 @@ public class TypePaiement implements Serializable {
         this.id = id;
     }
 
+    public String getNomTypePaiement() {
+        return nomTypePaiement;
+    }
+
+    public void setNomTypePaiement(String nomTypePaiement) {
+        this.nomTypePaiement = nomTypePaiement;
+    }
+
+    public Collection<Paiement> getPaiements() {
+        return paiements;
+    }
+
+    public void setPaiements(Collection<Paiement> paiements) {
+        this.paiements = paiements;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;

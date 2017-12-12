@@ -11,8 +11,6 @@ import java.util.Collection;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -24,7 +22,7 @@ import javax.persistence.OneToMany;
 public class Statut implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     private Long id;
     @Column(nullable = false) 
     private String nomStatut;
@@ -47,8 +45,9 @@ public class Statut implements Serializable {
         
     }
 
-    public Statut(String nomStatut, String valeurStatut) {
+    public Statut(Long id, String nomStatut, String valeurStatut) {
         this();
+        this.id = id;
         this.nomStatut = nomStatut;
         this.valeurStatut = valeurStatut;
     }

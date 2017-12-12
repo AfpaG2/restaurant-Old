@@ -59,6 +59,24 @@ public class Emplacement implements Serializable {
         this.capacite = capacite;
     }
 
+    public Collection<Commande> getCommandes() {
+        return commandes;
+    }
+
+    public void setCommandes(Collection<Commande> commandes) {
+        this.commandes = commandes;
+    }
+
+    public Collection<Statut> getStatuts() {
+        return statuts;
+    }
+
+    public void setStatuts(Collection<Statut> statuts) {
+        this.statuts = statuts;
+    }
+    
+    
+
     @Override
     public String toString() {
         return this.NumeroTable + "(" + this.capacite + " places)";
