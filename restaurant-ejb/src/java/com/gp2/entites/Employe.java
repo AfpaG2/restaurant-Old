@@ -60,7 +60,7 @@ public class Employe implements Serializable {
     private Date dateFin;
     
     // Gestion des dépendances
-    @OneToMany(mappedBy = "commande")
+    @OneToMany(mappedBy = "employe")
     private Collection<Commande> commandes;
 
     @ManyToOne

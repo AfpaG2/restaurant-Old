@@ -8,13 +8,15 @@
         <title>home</title>
     </head>
     <body>
-        <nav>
-            <c:url value="FrontControleur?section=menu-main" var="url01" />
-            <c:import url="${url01}" />
-        </nav>
+        
+         <div>
+        <c:url value="FrontControleur?section=donnees-create" var="url01" />
+        <a href="${url01}">créer les données</a> |
+         </div>   
+        
         <div>
             <h1>accueil</h1>
-            <p>Bienvenue dans votre magasin.</p>
+            <p>Bienvenue dans votre Restaurant.</p>
             <p class="${dClasse}">${msg}</p>
         </div>        
     </body>

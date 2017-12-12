@@ -8,6 +8,7 @@ package com.gp2.entites;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,11 +27,20 @@ public class Carte implements Serializable {
     private Long id;
     private String nomCarte;
     
-    @OneToMany(mappedBy = "carte")
+    @OneToMany(mappedBy = "carte", cascade = CascadeType.PERSIST)
     private Collection <TypePlat> typePlats;
+    
+    @OneToMany(mappedBy = "carte", cascade = CascadeType.PERSIST)
+    private Collection <NatureProduit> natureProduits;
+    
+    @OneToMany(mappedBy = "carte", cascade = CascadeType.PERSIST)
+    private Collection <Formule> formules;
+    
 
     public Carte() {
         typePlats = new ArrayList();
+        natureProduits= new ArrayList();
+        formules= new ArrayList();
     }
 
     public Carte(String nomCarte) {
@@ -38,8 +48,21 @@ public class Carte implements Serializable {
         this.nomCarte = nomCarte;
     }
 
-    
-    
+    public Collection<NatureProduit> getNatureProduits() {
+        return natureProduits;
+    }
+
+    public void setNatureProduits(Collection<NatureProduit> natureProduits) {
+        this.natureProduits = natureProduits;
+    }
+
+    public Collection<Formule> getFormules() {
+        return formules;
+    }
+
+    public void setFormules(Collection<Formule> formules) {
+        this.formules = formules;
+    }
     
     public String getNomCarte() {
         return nomCarte;
