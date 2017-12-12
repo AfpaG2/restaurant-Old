@@ -8,6 +8,7 @@ package com.gp2.entites;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,9 +38,16 @@ public class LigneCommande implements Serializable {
     private Statut statut;
     
     @ManyToOne
+    private Formule formule;
+    
+    @ManyToOne
     private Commande commande;
-    @OneToMany
+    
+    @OneToMany(mappedBy = "ligneCommande", cascade = CascadeType.PERSIST)
     private Collection<LigneCommande> ligneCommandes;
+    @ManyToOne
+    private LigneCommande ligneCommande;
+    
     @ManyToOne
     private Produit produit;
 
