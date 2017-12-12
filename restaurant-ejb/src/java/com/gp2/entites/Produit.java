@@ -28,8 +28,8 @@ public class Produit implements Serializable {
     @ManyToOne(cascade = CascadeType.PERSIST)
     private CodeTVA codeTVA;
     
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    private NatureProduit naturePorduit;
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    private Collection<NatureProduit> naturePorduits;
     
     
     @OneToMany(mappedBy = "produit", cascade = CascadeType.PERSIST)
@@ -53,6 +53,7 @@ public class Produit implements Serializable {
         infosProduits = new ArrayList();
         typePlats = new ArrayList();
         ligneCommandes = new ArrayList();
+        naturePorduits = new ArrayList();
     }
 
     public Produit(String nomProduit) {
@@ -66,6 +67,13 @@ public class Produit implements Serializable {
         this.prix = prix;
         this.image = image;
     }
+
+    public Produit(String nomProduit, float prix) {
+        this();
+        this.nomProduit = nomProduit;
+        this.prix = prix;
+    }
+    
     
     public Long getId() {
         return id;
@@ -107,12 +115,12 @@ public class Produit implements Serializable {
         this.codeTVA = codeTVA;
     }
 
-    public NatureProduit getNaturePorduit() {
-        return naturePorduit;
+    public Collection<NatureProduit> getNaturePorduits() {
+        return naturePorduits;
     }
 
-    public void setNaturePorduit(NatureProduit naturePorduit) {
-        this.naturePorduit = naturePorduit;
+    public void setNaturePorduits(Collection<NatureProduit> naturePorduits) {
+        this.naturePorduits = naturePorduits;
     }
 
     public Collection<LigneCommande> getLigneCommandes() {
