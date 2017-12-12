@@ -25,10 +25,10 @@ public class NatureProduit implements Serializable {
     @Id   
     private String nomNatureProduit;
     
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     private Carte carte;
     
-    @ManyToMany(mappedBy = "naturePorduits")
+    @ManyToMany(mappedBy = "natureProduits", cascade = CascadeType.PERSIST)
     private Collection<Produit> produits;
 
     public NatureProduit() {

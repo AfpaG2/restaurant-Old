@@ -28,7 +28,7 @@ public class Formule implements Serializable {
     @ManyToOne(cascade = CascadeType.PERSIST)
     private CodeTVA codeTVA;
     
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     private Carte carte;
     
 //    @ManyToOne(cascade = CascadeType.PERSIST)

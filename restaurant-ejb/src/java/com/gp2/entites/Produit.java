@@ -28,23 +28,25 @@ public class Produit implements Serializable {
     @ManyToOne(cascade = CascadeType.PERSIST)
     private CodeTVA codeTVA;
     
-    @ManyToMany(cascade = CascadeType.PERSIST)
-    private Collection<NatureProduit> naturePorduits;
+    @ManyToMany
+    private Collection<NatureProduit> natureProduits;
+    
+    @ManyToMany(mappedBy = "produits")
+    private Collection<TypePlat> typePlats;
     
     
     @OneToMany(mappedBy = "produit", cascade = CascadeType.PERSIST)
     private Collection<LigneCommande> ligneCommandes;
     
-    @ManyToMany(mappedBy = "produits")
-    private Collection<TypePlat> typePlats;
     
-    @ManyToMany()
+    
+    @ManyToMany(cascade = CascadeType.PERSIST)
     private Collection<InfosProduit> infosProduits;
     
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST)
     private Collection<InfosCuisine> infosCuisines;
     
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST)
     private Collection<Ingredient> ingredients;
     
     @ManyToOne
@@ -56,7 +58,7 @@ public class Produit implements Serializable {
         infosProduits = new ArrayList();
         typePlats = new ArrayList();
         ligneCommandes = new ArrayList();
-        naturePorduits = new ArrayList();
+        natureProduits = new ArrayList();
 
     }
 
@@ -119,13 +121,23 @@ public class Produit implements Serializable {
         this.codeTVA = codeTVA;
     }
 
-    public Collection<NatureProduit> getNaturePorduits() {
-        return naturePorduits;
+    public Collection<NatureProduit> getNatureProduits() {
+        return natureProduits;
     }
 
-    public void setNaturePorduits(Collection<NatureProduit> naturePorduits) {
-        this.naturePorduits = naturePorduits;
+    public void setNatureProduits(Collection<NatureProduit> natureProduits) {
+        this.natureProduits = natureProduits;
     }
+
+    public Promotion getPromotion() {
+        return promotion;
+    }
+
+    public void setPromotion(Promotion promotion) {
+        this.promotion = promotion;
+    }
+
+    
 
     public Collection<LigneCommande> getLigneCommandes() {
         return ligneCommandes;
