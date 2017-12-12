@@ -77,7 +77,6 @@ public class CreationData implements CreationDataLocal {
         Ingredient ing040 = new Ingredient("vinaigre blanc de riz");
         Ingredient ing041 = new Ingredient("sucre"); 
         
-        
         // Ingredients rajoutés par Ibrahim
         Ingredient ing150 = new Ingredient("Pates de riz");     
         Ingredient ing151 = new Ingredient("Filet de Boeuf");
@@ -119,7 +118,6 @@ public class CreationData implements CreationDataLocal {
         Ingredient ing183 = new Ingredient("Porc haché maigre cru");
         Ingredient ing184 = new Ingredient("Bouillon de poulet fait maison");
 
-
         Ingredient ing185 = new Ingredient("Oignon Blanc");
         Ingredient ing186 = new Ingredient("Purée de Tamarin");
         Ingredient ing187 = new Ingredient("Cacahuètes concassées");
@@ -140,8 +138,8 @@ public class CreationData implements CreationDataLocal {
         Ingredient ing201 = new Ingredient("Bouillon de poulet fait maison");
         Ingredient ing202 = new Ingredient("Bouillon de poulet fait maison");   
         
-
-
+        
+        
         InfosProduit infosPr01 = new InfosProduit("volume","50","cl");
         InfosProduit infosPr02 = new InfosProduit("volume","12.5","cl");
         InfosProduit infosPr03 = new InfosProduit("volume","50","cl");
