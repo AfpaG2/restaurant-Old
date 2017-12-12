@@ -71,8 +71,6 @@ public class Employe implements Serializable {
     
     public Employe() {
         commandes = new ArrayList<>();
-        restaurant = new Restaurant();
-        poste = new Poste();
     }
 
     public Employe(String nom, String prenom, String password, String telephone, String adresse) {

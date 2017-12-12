@@ -29,6 +29,14 @@ public class InfosProduit implements Serializable {
         produits = new ArrayList();
     }
 
+    public InfosProduit(String nom, String valeur) {
+        this();
+        this.nom = nom;
+        this.valeur = valeur;
+    }
+    
+    
+
     public InfosProduit(String nom, String valeur, String unite) {
         this();
         this.nom = nom;
