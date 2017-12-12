@@ -102,6 +102,22 @@ public class Promotion implements Serializable {
         this.pourcentageRemise = pourcentageRemise;
     }
 
+    public Collection<Formule> getFormules() {
+        return formules;
+    }
+
+    public void setFormules(Collection<Formule> formules) {
+        this.formules = formules;
+    }
+
+    public Collection<Produit> getProduits() {
+        return produits;
+    }
+
+    public void setProduits(Collection<Produit> produits) {
+        this.produits = produits;
+    }
+    
     @Override
     public String toString() {
         return this.promotion + "(" + this.pourcentageRemise + ")";

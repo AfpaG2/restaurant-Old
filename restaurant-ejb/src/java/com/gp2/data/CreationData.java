@@ -6,6 +6,8 @@ import com.gp2.entites.Ingredient;
 import com.gp2.entites.NatureProduit;
 import com.gp2.entites.Produit;
 import com.gp2.entites.TypePlat;
+import java.util.ArrayList;
+import java.util.Collection;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -291,6 +293,28 @@ public class CreationData implements CreationDataLocal {
         Produit  produ2 = new Produit("Pâtes blanches de riz sautées au poulet mariné au gingembre",13.9f);
         Produit  produ3 = new Produit("Pâtes blanches de riz sautées aux crevettes",14.9f);
         Produit  produ4 = new Produit("Pâtes blanches de riz sautées aux légumes",12.3f);
+        Produit produ5 = new Produit("Riz Cantonnais", 11.90f);
+        Produit produ6 = new Produit("Bo Bun Boeuf", 13.90f);
+        Produit produ7 = new Produit("Tit Kho, Porc au Caramel Vietnamien", 15.00f);
+        Produit produ8 = new Produit("Nems de Courgette Maison", 9.80f);
+        Produit produ9 = new Produit("Boeuf aux oignons vietnamien", 14.50f);
+        Produit produ10 = new Produit("Soupe Won Ton", 9.80f);
+        
+        
+        // Creation d'ingrédients pour chaque plats.
+        Ingredient produit9Ingredient1 = new Ingredient("Nuoc Mam");
+        Ingredient produit9Ingredient2 = new Ingredient("Huile d'Arachide");
+        Ingredient produit9Ingredient3 = new Ingredient("Poivron Vert");
+        Ingredient produit9Ingredient4 = new Ingredient("Oignons");
+        Ingredient produit9Ingredient5 = new Ingredient("RumSteack ou Noix de Basse Côte");
+        
+        produ9.getIngredients().add(produit9Ingredient1);
+        produ9.getIngredients().add(produit9Ingredient2);
+        produ9.getIngredients().add(produit9Ingredient3);
+        produ9.getIngredients().add(produit9Ingredient4);
+        produ9.getIngredients().add(produit9Ingredient5);
+        
+        
         
         //==================================================================================|
         //                                        DESSERTS                                  |

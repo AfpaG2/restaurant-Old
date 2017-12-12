@@ -157,6 +157,30 @@ public class Employe implements Serializable {
     public void setDateFin(Date dateFin) {
         this.dateFin = dateFin;
     }
+    
+    public Collection<Commande> getCommandes() {
+        return commandes;
+    }
+
+    public void setCommandes(Collection<Commande> commandes) {
+        this.commandes = commandes;
+    }
+
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
+    }
+
+    public Poste getPoste() {
+        return poste;
+    }
+
+    public void setPoste(Poste poste) {
+        this.poste = poste;
+    }
 
     @Override
     public String toString() {

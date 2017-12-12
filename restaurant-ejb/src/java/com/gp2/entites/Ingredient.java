@@ -4,7 +4,6 @@ package com.gp2.entites;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,7 +18,8 @@ public class Ingredient implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nomIngredient;
-    private float apportCalorique;    
+    private float apportCalorique;
+
     
     //propriétés pour les associations
     @ManyToMany(mappedBy = "ingredients")
@@ -33,7 +33,7 @@ public class Ingredient implements Serializable {
         this();
         this.nomIngredient = nomIngredient;
         this.apportCalorique = apportCalorique;
-        
+
     }
 
     public Ingredient(String nomIngredient) {

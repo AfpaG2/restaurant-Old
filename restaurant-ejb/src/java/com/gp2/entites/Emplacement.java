@@ -66,6 +66,7 @@ public class Emplacement implements Serializable {
         this.commandes = commandes;
     }
 
+
     public Statut getStatut() {
         return statut;
     }
@@ -75,7 +76,7 @@ public class Emplacement implements Serializable {
     }
     
     
-    
+
 
     @Override
     public String toString() {
