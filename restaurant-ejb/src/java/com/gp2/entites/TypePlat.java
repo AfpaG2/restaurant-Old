@@ -28,13 +28,13 @@ public class TypePlat implements Serializable {
     private Long id;
     private String nomTypePlat;
     
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Carte carte;
     
-    @ManyToMany(cascade = CascadeType.PERSIST)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Produit> produits;
     
-    @ManyToMany(cascade = CascadeType.PERSIST)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Formule> formules;
 
     public TypePlat() {        
@@ -89,6 +89,14 @@ public class TypePlat implements Serializable {
 
     public void setProduits(Collection<Produit> produits) {
         this.produits = produits;
+    }
+
+    public Collection<Formule> getFormules() {
+        return formules;
+    }
+
+    public void setFormules(Collection<Formule> formules) {
+        this.formules = formules;
     }
 
     

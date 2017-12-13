@@ -1,9 +1,11 @@
 package com.gp2.data;
 
+import com.gp2.entites.Formule;
 import com.gp2.entites.InfosProduit;
 import com.gp2.entites.Ingredient;
 import com.gp2.entites.NatureProduit;
 import com.gp2.entites.Produit;
+import com.gp2.entites.Statut;
 import com.gp2.entites.TypePlat;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -383,7 +385,7 @@ public class CreationData implements CreationDataLocal {
         produ1.getIngredients().add(ing199);
         produ1.getIngredients().add(ing153);
         produ1.getIngredients().add(ing026);
-        
+
         tp05.getProduits().add(produ1);
         
         // Creation du plat 2
@@ -531,6 +533,86 @@ public class CreationData implements CreationDataLocal {
         TypePlat tp07 = new TypePlat("SAUCES");
         
         
+        //==================================================================================|
+        //                                      statut                                      |
+        //==================================================================================|
+        // commande 10
+        Statut statut1001 = new Statut(1001, "commande", "commandé");
+        Statut statut1002 = new Statut(1002, "commande", "en cuisine");
+        Statut statut1003 = new Statut(1003, "commande", "préparation terminé");
+        Statut statut1004 = new Statut(1004, "commande", "servie");
+        Statut statut1005 = new Statut(1005, "commande", "annulé");
+        Statut statut1006 = new Statut(1006, "commande", "indisponible");
+        Statut statut1007 = new Statut(1007, "commande", "terminé"); // quand la commande est réglé
+        
+        // ligne Commande 20
+        Statut statut2001 = new Statut(2001, "ligneCommande", "disponible");
+        Statut statut2002 = new Statut(2002, "ligneCommande", "annulé");
+        Statut statut2003 = new Statut(2003, "ligneCommande", "indisponible");
+        Statut statut2004 = new Statut(2004, "ligneCommande", "prêt");
+        
+        // produit 30
+        Statut statut3001 = new Statut(3001, "produit", "disponible");
+        Statut statut3002 = new Statut(3002, "produit", "indisponible");
+        
+        // ingredient 40
+        Statut statut4001 = new Statut(4001, "ingredient", "disponible");
+        Statut statut4002 = new Statut(4001, "ingredient", "indisponible");
+        
+        // formule 50 
+        Statut statut5001 = new Statut(5001, "formule", "disponible");
+        Statut statut5002 = new Statut(5002, "formule", "indisponible");
+        
+        //emplacement 60
+        Statut statut6001 = new Statut(6001, "emplacement", "disponible");
+        Statut statut6002 = new Statut(6002, "emplacement", "occupé");
+        Statut statut6003 = new Statut(6003, "emplacement", "réservé");
+        Statut statut6004 = new Statut(6004, "emplacement", "indisponible");
+        
+        //==================================================================================|
+        //                                        Formules                                    |
+        //==================================================================================|
+         
+        Formule formule01 = new Formule("con rồng vàng / le dragon d'or","entré, plat, déssert" , 25, null);
+        Formule formule02 = new Formule("con mòng biển tự hào / le fière goéland","entré, plat", 19, null);
+        Formule formule03 = new Formule("con ngựa có cánh / le cheval ailés ","plat, déssert", 20, null);
+        
+        //==================================================================================|
+        //                                        TypePlats                                  |
+        //==================================================================================|
+        
+        TypePlat typePlat01 = new TypePlat("entré");
+        TypePlat typePlat02 = new TypePlat("déssert");
+        TypePlat typePlat03 = new TypePlat("plat");
+        TypePlat typePlat04 = new TypePlat("apéritifs");
+        
+        em.persist(typePlat01);
+        em.persist(typePlat02);
+        em.persist(typePlat03);
+        em.persist(formule01);
+        em.persist(formule02);
+        em.persist(formule03);
+        em.persist(statut1001);
+        em.persist(statut1002);
+        em.persist(statut1003);
+        em.persist(statut1004);
+        em.persist(statut1005);
+        em.persist(statut1006);
+        em.persist(statut1007);
+        em.persist(statut2001);
+        em.persist(statut2002);
+        em.persist(statut2003);
+        em.persist(statut2004);
+        em.persist(statut3001);
+        em.persist(statut3002);
+        em.persist(statut4001);
+        em.persist(statut4002);
+        em.persist(statut5001);
+        em.persist(statut5002);
+        em.persist(statut6001);
+        em.persist(statut6002);
+        em.persist(statut6003);
+        em.persist(statut6004);
         em.persist(tp01);
         em.persist(tp02);        
         em.persist(tp05);

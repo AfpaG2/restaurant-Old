@@ -42,10 +42,10 @@ public class Promotion implements Serializable {
     private float pourcentageRemise;
     
     // Gestion des dependances
-    @OneToMany(mappedBy = "promotion", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @OneToMany(mappedBy = "promotion")
     private Collection<Formule> formules;
 
-    @OneToMany(mappedBy = "promotion", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @OneToMany(mappedBy = "promotion")
     private Collection<Produit> produits;
     
     public Promotion() {
@@ -117,6 +117,8 @@ public class Promotion implements Serializable {
     public void setProduits(Collection<Produit> produits) {
         this.produits = produits;
     }
+    
+    
     
     @Override
     public String toString() {

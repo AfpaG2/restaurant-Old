@@ -21,15 +21,14 @@ public class Emplacement implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    private String NumeroTable;
-    
+    private String NumeroTable;    
     private int capacite;
     
     // gestion des dependances
-    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @OneToMany(mappedBy = "emplacement")
     private Collection<Commande> commandes;
    
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Statut statut;
 
     public Emplacement() {
