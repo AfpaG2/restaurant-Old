@@ -23,7 +23,7 @@ public class Formule implements Serializable {
     private String nomFormul;
     private float prix;
     private String image;
-    
+    private String descrpition;
     //propriétés pour les associations
     @ManyToOne(cascade = CascadeType.PERSIST)
     private CodeTVA codeTVA;
@@ -50,13 +50,14 @@ public class Formule implements Serializable {
     }
     
 
-    public Formule(String nomFormul, float prix) {
+    public Formule(String nomFormul,String description, float prix) {
         this();
         this.nomFormul = nomFormul;
         this.prix = prix;
+        this.descrpition = description;
     }
 
-    public Formule(String nomFormul, float prix, String image) {
+    public Formule(String nomFormul,String description, float prix, String image) {
         this();
         this.nomFormul = nomFormul;
         this.prix = prix;
