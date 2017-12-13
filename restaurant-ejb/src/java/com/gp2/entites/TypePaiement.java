@@ -26,7 +26,7 @@ public class TypePaiement implements Serializable {
     private String nomTypePaiement;
     
     // Gestion des dépendances
-    @ManyToMany(mappedBy = "typePaiements", cascade = CascadeType.PERSIST)
+    @ManyToMany(mappedBy = "typePaiements")
     private Collection<Paiement> paiements;
 
     public TypePaiement() {
@@ -45,6 +45,7 @@ public class TypePaiement implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+    
 
     public String getNomTypePaiement() {
         return nomTypePaiement;

@@ -8,7 +8,6 @@ package com.gp2.entites;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -20,30 +19,36 @@ public class Statut implements Serializable {
 
     @Id    
     private int id;
-
-
     @Column(nullable = false) 
     private String nomStatut;
     @Column(nullable = false) 
     private String valeurStatut;
     
+    @OneToMany(mappedBy = "statut")
+    private Collection<Produit> produits;
     
+    @OneToMany(mappedBy = "statut")
+    private Collection<Formule> formules;
     
+    @OneToMany(mappedBy = "statut")
+    private Collection<Ingredient> ingredients;
     
     @OneToMany(mappedBy = "statut")
     private Collection<LigneCommande> ligneCommandes;
     
-    @OneToMany(mappedBy = "statut", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @OneToMany(mappedBy = "statut")
     private Collection<Commande> commandes;
     
-    @OneToMany(mappedBy = "statut", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @OneToMany(mappedBy = "statut")
     private Collection<Emplacement> emplacements;
     
     public Statut() {
+        produits= new ArrayList<>();
+        formules= new ArrayList<>();
+        ingredients= new ArrayList<>();                
         ligneCommandes = new ArrayList<>();
         commandes = new ArrayList<>();
-        emplacements = new ArrayList<>();
-        
+        emplacements = new ArrayList<>();        
     }
 
     public Statut(int id, String nomStatut, String valeurStatut) {
@@ -102,8 +107,31 @@ public class Statut implements Serializable {
         this.valeurStatut = valeurStatut;
     }
 
-    
+    public Collection<Produit> getProduits() {
+        return produits;
+    }
 
+    public void setProduits(Collection<Produit> produits) {
+        this.produits = produits;
+    }
+
+    public Collection<Formule> getFormules() {
+        return formules;
+    }
+
+    public void setFormules(Collection<Formule> formules) {
+        this.formules = formules;
+    }
+
+    public Collection<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(Collection<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
+    
+    
     @Override
     public String toString() {
         return "com.gp2.entites.Statut[ id=" + id + " ]";

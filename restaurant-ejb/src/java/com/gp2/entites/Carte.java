@@ -27,13 +27,13 @@ public class Carte implements Serializable {
     private Long id;
     private String nomCarte;
     
-    @OneToMany(mappedBy = "carte", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "carte")
     private Collection <TypePlat> typePlats;
     
-    @OneToMany(mappedBy = "carte", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "carte")
     private Collection <NatureProduit> natureProduits;
     
-    @OneToMany(mappedBy = "carte", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "carte")
     private Collection <Formule> formules;
     
 

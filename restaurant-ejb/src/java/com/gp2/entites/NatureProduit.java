@@ -25,10 +25,10 @@ public class NatureProduit implements Serializable {
     @Id   
     private String nomNatureProduit;
     
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Carte carte;
     
-    @ManyToMany(mappedBy = "natureProduits", cascade = CascadeType.PERSIST)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Produit> produits;
 
     public NatureProduit() {
@@ -39,7 +39,6 @@ public class NatureProduit implements Serializable {
         this();
         this.nomNatureProduit = nomNatureProduit;
     }
-    
     
 
     public String getNomNatureProduit() {
@@ -65,10 +64,6 @@ public class NatureProduit implements Serializable {
     public void setProduits(Collection<Produit> produits) {
         this.produits = produits;
     }
-    
-    
-    
-   
 
 //    @Override
 //    public int hashCode() {

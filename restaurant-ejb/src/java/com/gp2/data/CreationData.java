@@ -385,7 +385,7 @@ public class CreationData implements CreationDataLocal {
         produ1.getIngredients().add(ing199);
         produ1.getIngredients().add(ing153);
         produ1.getIngredients().add(ing026);
-        
+        tp05.getProduits().add(produ1);
         
         // Creation du plat 2
         produ2.getIngredients().add(ing188);
@@ -501,6 +501,7 @@ public class CreationData implements CreationDataLocal {
         //                                        DESSERTS                                  |
         //==================================================================================|
         TypePlat tp06 = new TypePlat("DESSERTS");
+        
         Produit produi1 = new Produit("Soupe de perles de tapioca au coco et à la banane", 5f);
         Produit produi2 = new Produit("Raviolis au nutella", 6.1f);
         Produit produi3 = new Produit("Flan au caramel et litchi", 5f);

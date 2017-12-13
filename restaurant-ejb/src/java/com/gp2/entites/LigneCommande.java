@@ -31,28 +31,27 @@ public class LigneCommande implements Serializable {
     @Column(nullable = false) 
     private float prixHT;
     
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Statut statut;
     
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Formule formule;
     
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Commande commande;
     
-    @OneToMany(mappedBy = "ligneCommande", cascade = CascadeType.PERSIST)
-    private Collection<LigneCommande> ligneCommandes;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Produit produit;
+    
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private LigneCommande ligneCommande;
     
-    @ManyToOne
-    private Produit produit;
+    @OneToMany(mappedBy = "ligneCommande")
+    private Collection<LigneCommande> ligneCommandes;
 
     public LigneCommande() {       
         this.ligneCommandes = new ArrayList<>();
     }
-    
-    
     
     public int getQuantite() {
         return quantite;
@@ -111,10 +110,22 @@ public class LigneCommande implements Serializable {
     public void setProduit(Produit produit) {
         this.produit = produit;
     }
-    
-    
-    
 
+    public Formule getFormule() {
+        return formule;
+    }
+
+    public void setFormule(Formule formule) {
+        this.formule = formule;
+    }
+
+    public LigneCommande getLigneCommande() {
+        return ligneCommande;
+    }
+
+    public void setLigneCommande(LigneCommande ligneCommande) {
+        this.ligneCommande = ligneCommande;
+    }
     public Long getId() {
         return id;
     }
