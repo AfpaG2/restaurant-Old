@@ -384,6 +384,7 @@ public class CreationData implements CreationDataLocal {
         produ1.getIngredients().add(ing153);
         produ1.getIngredients().add(ing026);
         
+        tp05.getProduits().add(produ1);
         
         // Creation du plat 2
         produ2.getIngredients().add(ing188);
@@ -402,6 +403,7 @@ public class CreationData implements CreationDataLocal {
         produ2.getIngredients().add(ing023);
         produ2.getIngredients().add(ing193);
         
+        tp05.getProduits().add(produ2);
         
         // Creation du plat 3
         produ3.getIngredients().add(ing150);
@@ -418,6 +420,7 @@ public class CreationData implements CreationDataLocal {
         produ3.getIngredients().add(ing169);
         produ3.getIngredients().add(ing07);
         
+        tp05.getProduits().add(produ3);
         
         // Creation du plat 4.
         produ4.getIngredients().add(ing150);
@@ -431,6 +434,8 @@ public class CreationData implements CreationDataLocal {
         produ4.getIngredients().add(ing155);
         produ4.getIngredients().add(ing156);
         
+        tp05.getProduits().add(produ4);
+        
         // Creation du plat 5.
         produ5.getIngredients().add(ing157);
         produ5.getIngredients().add(ing158);
@@ -442,6 +447,8 @@ public class CreationData implements CreationDataLocal {
         produ5.getIngredients().add(ing161);
         produ5.getIngredients().add(ing162);
         produ5.getIngredients().add(ing163);
+        
+        tp05.getProduits().add(produ5);
         
         // Creation du plat 6.
         produ6.getIngredients().add(ing004);
@@ -461,6 +468,8 @@ public class CreationData implements CreationDataLocal {
         produ6.getIngredients().add(ing012);
         produ6.getIngredients().add(ing170);
         
+        tp05.getProduits().add(produ6);
+        
         // Creation du plat 7.
         produ7.getIngredients().add(ing017);
         produ7.getIngredients().add(ing027);
@@ -469,6 +478,8 @@ public class CreationData implements CreationDataLocal {
         produ7.getIngredients().add(ing002);
         produ7.getIngredients().add(ing162);
         produ7.getIngredients().add(ing172);
+        
+        tp05.getProduits().add(produ7);
         
         // Creation du plat 8.
         produ8.getIngredients().add(ing005);
@@ -479,6 +490,8 @@ public class CreationData implements CreationDataLocal {
         produ8.getIngredients().add(ing175);
         produ8.getIngredients().add(ing176);
         
+        tp05.getProduits().add(produ8);
+        
         // Creation du plat 9.
         produ9.getIngredients().add(ing017);
         produ9.getIngredients().add(ing177);
@@ -486,6 +499,8 @@ public class CreationData implements CreationDataLocal {
         produ9.getIngredients().add(ing032);
         produ9.getIngredients().add(ing179);
 
+        tp05.getProduits().add(produ9);
+        
         // Creation du plat 10.
         produ10.getIngredients().add(ing154);
         produ10.getIngredients().add(ing157);
@@ -495,10 +510,13 @@ public class CreationData implements CreationDataLocal {
         produ10.getIngredients().add(ing183);
         produ10.getIngredients().add(ing184);
 
+        tp05.getProduits().add(produ10);
+        
         //==================================================================================|
         //                                        DESSERTS                                  |
         //==================================================================================|
         TypePlat tp06 = new TypePlat("DESSERTS");
+        
         Produit produi1 = new Produit("Soupe de perles de tapioca au coco et à la banane", 5f);
         Produit produi2 = new Produit("Raviolis au nutella", 6.1f);
         Produit produi3 = new Produit("Flan au caramel et litchi", 5f);
