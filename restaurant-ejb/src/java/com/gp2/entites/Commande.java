@@ -35,20 +35,20 @@ public class Commande implements Serializable {
     @Column(nullable = false) 
     private Date dateCommande;
     
-    @OneToMany
+    @OneToMany(mappedBy = "commande")
     private Collection<LigneCommande> ligneCommandes;
     //@ManyToOne
     //private Emplacement emplacement;
     @OneToMany(mappedBy = "commande")
     private Collection<Paiement> paiements;
     
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Emplacement emplacement;
     
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Employe employe;
     
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private  Statut statut;
 
     public Commande() {
@@ -88,10 +88,6 @@ public class Commande implements Serializable {
     public void setStatut(Statut statut) {
         this.statut = statut;
     }
-
-    
-    
-    
     public Long getId() {
         return id;
     }
@@ -100,6 +96,23 @@ public class Commande implements Serializable {
         this.id = id;
     }
 
+    public Emplacement getEmplacement() {
+        return emplacement;
+    }
+
+    public void setEmplacement(Emplacement emplacement) {
+        this.emplacement = emplacement;
+    }
+
+    public Employe getEmploye() {
+        return employe;
+    }
+
+    public void setEmploye(Employe employe) {
+        this.employe = employe;
+    }
+    
+    
     @Override
     public int hashCode() {
         int hash = 0;

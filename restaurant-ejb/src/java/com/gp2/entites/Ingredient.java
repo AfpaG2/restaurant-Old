@@ -4,11 +4,14 @@ package com.gp2.entites;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -20,13 +23,20 @@ public class Ingredient implements Serializable {
     private String nomIngredient;
     private float apportCalorique;
 
-    
     //propriétés pour les associations
     @ManyToMany(mappedBy = "ingredients")
     private Collection<Produit> produits;
-
+    
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Statut statut;
+    
+    //propriétés pour les associations
+    @OneToMany(mappedBy = "ingredient")
+    private Collection<InfosNutritionnelle> infosNutritionnelles;
+    
     public Ingredient() {
         produits = new ArrayList();
+        infosNutritionnelles = new ArrayList();
     }
 
     public Ingredient(String nomIngredient, float apportCalorique) {
@@ -72,6 +82,22 @@ public class Ingredient implements Serializable {
 
     public void setProduits(Collection<Produit> produits) {
         this.produits = produits;
+    }
+
+    public Statut getStatut() {
+        return statut;
+    }
+
+    public void setStatut(Statut statut) {
+        this.statut = statut;
+    }
+
+    public Collection<InfosNutritionnelle> getInfosNutritionnelles() {
+        return infosNutritionnelles;
+    }
+
+    public void setInfosNutritionnelles(Collection<InfosNutritionnelle> infosNutritionnelles) {
+        this.infosNutritionnelles = infosNutritionnelles;
     }
     
     

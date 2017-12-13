@@ -26,7 +26,7 @@ public class Poste implements Serializable {
     private String description;
     
     // Gestion des dependances
-    @OneToMany(mappedBy = "poste", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "poste")
     private Collection<Employe> employes;
 
     public Poste() {
@@ -62,6 +62,7 @@ public class Poste implements Serializable {
     public void setEmployes(Collection<Employe> employes) {
         this.employes = employes;
     }
+    
 
     @Override
     public String toString() {

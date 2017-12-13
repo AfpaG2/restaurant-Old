@@ -36,7 +36,7 @@ public class Restaurant implements Serializable {
     private String email;
     
     // Gestion des dependances
-    @OneToMany(mappedBy = "restaurant", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @OneToMany(mappedBy = "restaurant")
     private Collection<Employe> employes;
 
     public Restaurant() {

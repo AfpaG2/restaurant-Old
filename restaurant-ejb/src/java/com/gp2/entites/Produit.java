@@ -25,32 +25,35 @@ public class Produit implements Serializable {
     private String image;
     
     // propriétés pour les associations
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private CodeTVA codeTVA;
     
-    @ManyToMany
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Statut statut;
+    
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Promotion promotion;
+    
+    
+    @ManyToMany(mappedBy = "produits")
     private Collection<NatureProduit> natureProduits;
     
     @ManyToMany(mappedBy = "produits")
     private Collection<TypePlat> typePlats;
     
-    
-    @OneToMany(mappedBy = "produit", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "produit")
     private Collection<LigneCommande> ligneCommandes;
     
-    
-    
-    @ManyToMany(cascade = CascadeType.PERSIST)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<InfosProduit> infosProduits;
     
-    @ManyToMany(cascade = CascadeType.PERSIST)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<InfosCuisine> infosCuisines;
     
-    @ManyToMany(cascade = CascadeType.PERSIST)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Ingredient> ingredients;
     
-    @ManyToOne
-    private Promotion promotion;
+    
 
     public Produit() {
         ingredients = new ArrayList();
@@ -178,7 +181,14 @@ public class Produit implements Serializable {
     public void setIngredients(Collection<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
-    
+
+    public Statut getStatut() {
+        return statut;
+    }
+
+    public void setStatut(Statut statut) {
+        this.statut = statut;
+    }
     
 
 //    @Override

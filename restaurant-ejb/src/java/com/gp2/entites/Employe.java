@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -63,10 +64,10 @@ public class Employe implements Serializable {
     @OneToMany(mappedBy = "employe")
     private Collection<Commande> commandes;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Restaurant restaurant;
     
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Poste poste;
     
     public Employe() {
@@ -181,6 +182,7 @@ public class Employe implements Serializable {
     public void setPoste(Poste poste) {
         this.poste = poste;
     }
+    
 
     @Override
     public String toString() {

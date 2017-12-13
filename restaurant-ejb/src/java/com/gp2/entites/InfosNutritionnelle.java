@@ -2,6 +2,7 @@
 package com.gp2.entites;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +19,7 @@ public class InfosNutritionnelle implements Serializable {
     private String InfosNutritionnelle;
     private float valeur;
     
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Ingredient ingredient;
 
     public InfosNutritionnelle() {

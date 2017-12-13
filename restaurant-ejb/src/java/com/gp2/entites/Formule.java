@@ -25,30 +25,31 @@ public class Formule implements Serializable {
     private String image;
     
     //propriétés pour les associations
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private CodeTVA codeTVA;
     
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Carte carte;
+   
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Statut statut;
+    
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Promotion promotion;
     
 //    @ManyToOne(cascade = CascadeType.PERSIST)
 //    private Poromotion promotion;
     
-    @OneToMany(mappedBy = "formule", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "formule")
     private Collection<LigneCommande> ligneCommandes;
     
-    @ManyToMany (mappedBy = "formules", cascade = CascadeType.PERSIST)
+    @ManyToMany (mappedBy = "formules")
     private Collection<TypePlat> typePlats;
     
-    @ManyToOne
-    private Promotion promotion;
-
     public Formule() {
         ligneCommandes = new ArrayList();
-        typePlats  = new ArrayList();
-        promotion = new Promotion();
-    }
-    
+        typePlats  = new ArrayList();        
+    }    
 
     public Formule(String nomFormul, float prix) {
         this();
@@ -74,6 +75,7 @@ public class Formule implements Serializable {
     public String getNomFormul() {
         return nomFormul;
     }
+    
 
     public void setNomFormul(String nomFormul) {
         this.nomFormul = nomFormul;
@@ -126,6 +128,24 @@ public class Formule implements Serializable {
     public void setTypePlats(Collection<TypePlat> typePlats) {
         this.typePlats = typePlats;
     }
+
+    public Statut getStatut() {
+        return statut;
+    }
+
+    public void setStatut(Statut statut) {
+        this.statut = statut;
+    }
+
+    public Promotion getPromotion() {
+        return promotion;
+    }
+
+    public void setPromotion(Promotion promotion) {
+        this.promotion = promotion;
+    }
+    
+    
     
     
 

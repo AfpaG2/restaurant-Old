@@ -8,6 +8,9 @@ package com.gp2.entites;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +18,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -27,22 +32,30 @@ public class Paiement implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private float montant;
-    private int capacite;
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(nullable = false) 
+    private Date datePaiement;
     
-    @ManyToOne
+    
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Commande commande;
     
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<TypePaiement> typePaiements;
 
     public Paiement() {
         typePaiements = new ArrayList<>();
     }
 
-    public Paiement(float montant, int capacite) {
+    public Paiement(float montant) {
         this();
         this.montant = montant;
-        this.capacite = capacite;
+        
+    }
+
+    public Paiement(float montant, Date datePaiement) {
+        this.montant = montant;
+        this.datePaiement = datePaiement;
     }
 
     
@@ -55,15 +68,30 @@ public class Paiement implements Serializable {
         this.montant = montant;
     }
 
-    public int getCapacite() {
-        return capacite;
+    public Date getDatePaiement() {
+        return datePaiement;
     }
 
-    public void setCapacite(int capacite) {
-        this.capacite = capacite;
+    public void setDatePaiement(Date datePaiement) {
+        this.datePaiement = datePaiement;
     }
-    
-    
+
+    public Commande getCommande() {
+        return commande;
+    }
+
+    public void setCommande(Commande commande) {
+        this.commande = commande;
+    }
+
+    public Collection<TypePaiement> getTypePaiements() {
+        return typePaiements;
+    }
+
+    public void setTypePaiements(Collection<TypePaiement> typePaiements) {
+        this.typePaiements = typePaiements;
+    }
+
     
     
     public Long getId() {
