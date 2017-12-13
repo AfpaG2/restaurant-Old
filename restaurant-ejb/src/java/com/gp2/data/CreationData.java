@@ -136,11 +136,58 @@ public class CreationData implements CreationDataLocal {
         Ingredient ing197 = new Ingredient("Légumes shop suey");
         Ingredient ing198 = new Ingredient("Germes de soja ");
         Ingredient ing199 = new Ingredient("Huile végétale");
-        Ingredient ing200 = new Ingredient("Bouillon de poulet fait maison");
-        Ingredient ing201 = new Ingredient("Bouillon de poulet fait maison");
-        Ingredient ing202 = new Ingredient("Bouillon de poulet fait maison");   
         
+        // Ingrédients utilisés en déssert (Ibrahim)
+        Ingredient ing200 = new Ingredient("Banane");
+        Ingredient ing201 = new Ingredient("Sucre vanillé");
+        Ingredient ing202 = new Ingredient("Lait");   
+        Ingredient ing203 = new Ingredient("Lait de Coco");   
+        Ingredient ing204 = new Ingredient("Perles de Tapioca"); 
+          
+        Ingredient ing205 = new Ingredient("Farine");   
+        Ingredient ing206 = new Ingredient("Eau");   
+        Ingredient ing207 = new Ingredient("Beurre");   
+        Ingredient ing208 = new Ingredient("Nutella");   
+        Ingredient ing209 = new Ingredient("Jaune d'oeuf");
+
+        Ingredient ing210 = new Ingredient("Jus de citron");   
+        Ingredient ing211 = new Ingredient("Gousse de vanille");   
+        Ingredient ing212 = new Ingredient("Litchi au sirop");
+
+        Ingredient ing213 = new Ingredient("Chocolat noir spécial");   
+        Ingredient ing214 = new Ingredient("Fécule de maïs");   
+        Ingredient ing215 = new Ingredient("Noix de Coco râpée");
+           
+        Ingredient ing216 = new Ingredient("Glace vanille");   
+        Ingredient ing217 = new Ingredient("Glace au chocolat");
+           
+        Ingredient ing218 = new Ingredient("Ananas");   
+        Ingredient ing219 = new Ingredient("Orange");   
+        Ingredient ing220 = new Ingredient("Papaye");   
+        Ingredient ing221 = new Ingredient("Kiwi");   
+        Ingredient ing222 = new Ingredient("Mangue");   
+        Ingredient ing223 = new Ingredient("Baton de Cannelle");   
+        Ingredient ing224 = new Ingredient("Poivre de Sichuan");
+           
+        Ingredient ing225 = new Ingredient("Biscuit au chocolat");   
+        Ingredient ing226 = new Ingredient("avocat");   
+        Ingredient ing227 = new Ingredient("Chocolat au lait fondu");   
+        Ingredient ing228 = new Ingredient("Lait concentré sucré");  
+        Ingredient ing229 = new Ingredient("Rhum");   
+        Ingredient ing230 = new Ingredient("Noix du brésil"); 
+
+        Ingredient ing231 = new Ingredient("Haricots noirs secs"); 
+        Ingredient ing232 = new Ingredient("Lotus au sirop");
+
+        Ingredient ing233 = new Ingredient("Taro (Khoai Môn Cao)"); 
+        Ingredient ing234 = new Ingredient("Riz gluant"); 
+        Ingredient ing235 = new Ingredient("Feuilles de Pandanus fraiches"); 
         
+        Ingredient ing236 = new Ingredient("Cornilles ou doliques à oeil noir (Haricot)"); 
+        Ingredient ing237 = new Ingredient("Bicarbonate de Sodium"); 
+        Ingredient ing238 = new Ingredient("Extrait de vanille");  
+        Ingredient ing239 = new Ingredient("Amidon de Maïs");
+                  
         
         InfosProduit infosPr01 = new InfosProduit("volume","50","cl");
         InfosProduit infosPr02 = new InfosProduit("volume","12.5","cl");
@@ -149,6 +196,42 @@ public class CreationData implements CreationDataLocal {
         InfosProduit infosPr05 = new InfosProduit("volume","50","cl");
         InfosProduit infosPr06 = new InfosProduit("volume","12.5","cl");
         InfosProduit infosPr07 = new InfosProduit("Alcool","Sans alcool");
+        
+        //==================================================================================|
+        //                                      statut                                      |
+        //==================================================================================|
+        // commande 10
+        Statut statut1001 = new Statut(1001, "commande", "commandé");
+        Statut statut1002 = new Statut(1002, "commande", "en cuisine");
+        Statut statut1003 = new Statut(1003, "commande", "préparation terminé");
+        Statut statut1004 = new Statut(1004, "commande", "servie");
+        Statut statut1005 = new Statut(1005, "commande", "annulé");
+        Statut statut1006 = new Statut(1006, "commande", "indisponible");
+        Statut statut1007 = new Statut(1007, "commande", "terminé"); // quand la commande est réglé
+        
+        // ligne Commande 20
+        Statut statut2001 = new Statut(2001, "ligneCommande", "disponible");
+        Statut statut2002 = new Statut(2002, "ligneCommande", "annulé");
+        Statut statut2003 = new Statut(2003, "ligneCommande", "indisponible");
+        Statut statut2004 = new Statut(2004, "ligneCommande", "prêt");
+        
+        // produit 30
+        Statut statut3001 = new Statut(3001, "produit", "disponible");
+        Statut statut3002 = new Statut(3002, "produit", "indisponible");
+        
+        // ingredient 40
+        Statut statut4001 = new Statut(4001, "ingredient", "disponible");
+        Statut statut4002 = new Statut(4002, "ingredient", "indisponible");
+        
+        // formule 50 
+        Statut statut5001 = new Statut(5001, "formule", "disponible");
+        Statut statut5002 = new Statut(5002, "formule", "indisponible");
+        
+        //emplacement 60
+        Statut statut6001 = new Statut(6001, "emplacement", "disponible");
+        Statut statut6002 = new Statut(6002, "emplacement", "occupé");
+        Statut statut6003 = new Statut(6003, "emplacement", "réservé");
+        Statut statut6004 = new Statut(6004, "emplacement", "indisponible");
        
 
         //==================================================================================|
@@ -386,6 +469,7 @@ public class CreationData implements CreationDataLocal {
         produ1.getIngredients().add(ing153);
         produ1.getIngredients().add(ing026);
 
+        produ1.setStatut(statut3001);
         tp05.getProduits().add(produ1);
         
         // Creation du plat 2
@@ -397,7 +481,6 @@ public class CreationData implements CreationDataLocal {
         produ2.getIngredients().add(ing025);
         produ2.getIngredients().add(ing027);
         produ2.getIngredients().add(ing07);
-        produ2.getIngredients().add(ing154);
         produ2.getIngredients().add(ing155);
         produ2.getIngredients().add(ing191);
         produ2.getIngredients().add(ing192);
@@ -405,6 +488,7 @@ public class CreationData implements CreationDataLocal {
         produ2.getIngredients().add(ing023);
         produ2.getIngredients().add(ing193);
         
+        produ2.setStatut(statut3001);
         tp05.getProduits().add(produ2);
         
         // Creation du plat 3
@@ -422,6 +506,7 @@ public class CreationData implements CreationDataLocal {
         produ3.getIngredients().add(ing169);
         produ3.getIngredients().add(ing07);
         
+        produ3.setStatut(statut3001);
         tp05.getProduits().add(produ3);
         
         // Creation du plat 4.
@@ -436,6 +521,7 @@ public class CreationData implements CreationDataLocal {
         produ4.getIngredients().add(ing155);
         produ4.getIngredients().add(ing156);
         
+        produ4.setStatut(statut3001);
         tp05.getProduits().add(produ4);
         
         // Creation du plat 5.
@@ -450,6 +536,7 @@ public class CreationData implements CreationDataLocal {
         produ5.getIngredients().add(ing162);
         produ5.getIngredients().add(ing163);
         
+        produ5.setStatut(statut3001);
         tp05.getProduits().add(produ5);
         
         // Creation du plat 6.
@@ -470,6 +557,7 @@ public class CreationData implements CreationDataLocal {
         produ6.getIngredients().add(ing012);
         produ6.getIngredients().add(ing170);
         
+        produ6.setStatut(statut3001);
         tp05.getProduits().add(produ6);
         
         // Creation du plat 7.
@@ -481,6 +569,7 @@ public class CreationData implements CreationDataLocal {
         produ7.getIngredients().add(ing162);
         produ7.getIngredients().add(ing172);
         
+        produ7.setStatut(statut3001);
         tp05.getProduits().add(produ7);
         
         // Creation du plat 8.
@@ -492,6 +581,7 @@ public class CreationData implements CreationDataLocal {
         produ8.getIngredients().add(ing175);
         produ8.getIngredients().add(ing176);
         
+        produ8.setStatut(statut3001);
         tp05.getProduits().add(produ8);
         
         // Creation du plat 9.
@@ -501,6 +591,7 @@ public class CreationData implements CreationDataLocal {
         produ9.getIngredients().add(ing032);
         produ9.getIngredients().add(ing179);
 
+        produ9.setStatut(statut3001);
         tp05.getProduits().add(produ9);
         
         // Creation du plat 10.
@@ -512,6 +603,7 @@ public class CreationData implements CreationDataLocal {
         produ10.getIngredients().add(ing183);
         produ10.getIngredients().add(ing184);
 
+        produ10.setStatut(statut3001);
         tp05.getProduits().add(produ10);
         
         //==================================================================================|
@@ -523,51 +615,146 @@ public class CreationData implements CreationDataLocal {
         Produit produi2 = new Produit("Raviolis au nutella", 6.1f);
         Produit produi3 = new Produit("Flan au caramel et litchi", 5f);
         Produit produi4 = new Produit("Fondant au chocolat et glace coco", 6.7f);
-        Produit produi5 = new Produit("Coupe coco, vanille, chocolat et sauce chocolat", 7f);
+        Produit produi5 = new Produit("Coupe coco, vanille, chocolat et banane", 7f);
         Produit produi6 = new Produit("Salade de fruits frais exotiques", 6.1f);
-        Produit produi7 = new Produit("Crème d'avocat doucement sucrée", 7f);
-
+        Produit produi7 = new Produit("Mousse d'avocat doucement sucrée", 7f);
+        Produit produi8 = new Produit("Soupe sucrée de haricots noirs aux graines de lotus", 5.9f);
+        Produit produi9 = new Produit("Porridge sucré de riz gluant au taro et lait de coco (Chè Khoai môn)", 4.9f);
+        Produit produi10 = new Produit("Entremets aux Cornilles et riz gluant (Chè dâu trang)", 6.5f);
+        
+        
+        //==================================================================================|
+        //                   CREATION D'INGREDIENTS COMPOSANT LES DESSERTS                  |
+        //==================================================================================|
+        
+        // Creation du déssert 1 : "Soupe de Perles de Tapioca au coco et à la banane"
+        produi1.getIngredients().add(ing200);
+        produi1.getIngredients().add(ing201);
+        produi1.getIngredients().add(ing202);
+        produi1.getIngredients().add(ing203);
+        produi1.getIngredients().add(ing204);
+        produi1.getIngredients().add(ing041);
+        
+        produi1.setStatut(statut3001);
+        tp06.getProduits().add(produi1);
+        
+        // Creation du déssert 2 : "Raviolis au nutella"
+        produi2.getIngredients().add(ing200);
+        produi2.getIngredients().add(ing205);
+        produi2.getIngredients().add(ing206);
+        produi2.getIngredients().add(ing207);
+        produi2.getIngredients().add(ing208);
+        produi2.getIngredients().add(ing209);
+        
+        produi2.setStatut(statut3001);
+        tp06.getProduits().add(produi2);
+        
+        // Creation du déssert 3 : "Flan au caramel et litchi"
+        produi3.getIngredients().add(ing041);
+        produi3.getIngredients().add(ing206);
+        produi3.getIngredients().add(ing210);
+        produi3.getIngredients().add(ing202);
+        produi3.getIngredients().add(ing157);
+        produi3.getIngredients().add(ing211);
+        produi3.getIngredients().add(ing212);
+        
+        produi3.setStatut(statut3001);
+        tp06.getProduits().add(produi3);
+        
+        // Creation du déssert 4 : "Fondant au chocolat et glace coco"
+        produi4.getIngredients().add(ing207);
+        produi4.getIngredients().add(ing157);
+        produi4.getIngredients().add(ing041);
+        produi4.getIngredients().add(ing213);
+        produi4.getIngredients().add(ing214);
+        produi4.getIngredients().add(ing215);
+        produi4.getIngredients().add(ing027);
+        
+        produi4.setStatut(statut3001);
+        tp06.getProduits().add(produi4);
+        
+        // Creation du déssert 5 : "Coupe coco, vanille, chocolat et banane"
+        produi5.getIngredients().add(ing211);
+        produi5.getIngredients().add(ing216);
+        produi5.getIngredients().add(ing217);
+        produi5.getIngredients().add(ing215);
+        produi5.getIngredients().add(ing200);
+        produi5.getIngredients().add(ing202);
+        produi5.getIngredients().add(ing157);
+        
+        produi5.setStatut(statut3001);
+        tp06.getProduits().add(produi5);
+        
+        // Creation du déssert 6 : "Salade de fruits frais exotiques"
+        produi6.getIngredients().add(ing218);
+        produi6.getIngredients().add(ing219);
+        produi6.getIngredients().add(ing220);
+        produi6.getIngredients().add(ing221);
+        produi6.getIngredients().add(ing222);
+        produi6.getIngredients().add(ing223);
+        produi6.getIngredients().add(ing224);
+        produi6.getIngredients().add(ing041);
+        
+        produi6.setStatut(statut3001);
+        tp06.getProduits().add(produi6);
+        
+        // Creation du déssert 7 : "Mousse d'avocat doucement sucrée"
+        produi7.getIngredients().add(ing225);
+        produi7.getIngredients().add(ing226);
+        produi7.getIngredients().add(ing227);
+        produi7.getIngredients().add(ing228);
+        produi7.getIngredients().add(ing041);
+        produi7.getIngredients().add(ing014);
+        produi7.getIngredients().add(ing229);
+        produi7.getIngredients().add(ing230);
+        
+        produi7.setStatut(statut3001);
+        tp06.getProduits().add(produi7);
+        
+        // Creation du déssert 8 : "Soupe sucrée de haricots noirs aux graines de lotus"
+        produi8.getIngredients().add(ing231);
+        produi8.getIngredients().add(ing232);
+        produi8.getIngredients().add(ing204);
+        produi8.getIngredients().add(ing041);
+        produi8.getIngredients().add(ing027);
+        produi8.getIngredients().add(ing014);
+        produi8.getIngredients().add(ing203);
+        produi8.getIngredients().add(ing206);
+        
+        produi8.setStatut(statut3001);
+        tp06.getProduits().add(produi8);
+        
+        // Creation du déssert 9 : "Porridge sucré de riz gluant au taro et lait de coco"
+        produi9.getIngredients().add(ing233);
+        produi9.getIngredients().add(ing234);
+        produi9.getIngredients().add(ing235);
+        produi9.getIngredients().add(ing041);
+        produi9.getIngredients().add(ing203);
+        produi9.getIngredients().add(ing204);
+        produi9.getIngredients().add(ing027);
+        produi9.getIngredients().add(ing206);
+        
+        produi9.setStatut(statut3001);
+        tp06.getProduits().add(produi9);
+        
+        // Creation du déssert 10 : "Entremets aux Cornilles et riz gluant (Chè dâu trang)"
+        produi10.getIngredients().add(ing236);
+        produi10.getIngredients().add(ing234);
+        produi10.getIngredients().add(ing235);
+        produi10.getIngredients().add(ing041);
+        produi10.getIngredients().add(ing237);
+        produi10.getIngredients().add(ing238);
+        produi10.getIngredients().add(ing239);
+        produi10.getIngredients().add(ing203);
+        produi10.getIngredients().add(ing027);
+        
+        produi10.setStatut(statut3001);
+        tp06.getProduits().add(produi10);
+        
         //==================================================================================|
         //                                        SAUCES                                    |
         //==================================================================================|
         TypePlat tp07 = new TypePlat("SAUCES");
-        
-        
-        //==================================================================================|
-        //                                      statut                                      |
-        //==================================================================================|
-        // commande 10
-        Statut statut1001 = new Statut(1001, "commande", "commandé");
-        Statut statut1002 = new Statut(1002, "commande", "en cuisine");
-        Statut statut1003 = new Statut(1003, "commande", "préparation terminé");
-        Statut statut1004 = new Statut(1004, "commande", "servie");
-        Statut statut1005 = new Statut(1005, "commande", "annulé");
-        Statut statut1006 = new Statut(1006, "commande", "indisponible");
-        Statut statut1007 = new Statut(1007, "commande", "terminé"); // quand la commande est réglé
-        
-        // ligne Commande 20
-        Statut statut2001 = new Statut(2001, "ligneCommande", "disponible");
-        Statut statut2002 = new Statut(2002, "ligneCommande", "annulé");
-        Statut statut2003 = new Statut(2003, "ligneCommande", "indisponible");
-        Statut statut2004 = new Statut(2004, "ligneCommande", "prêt");
-        
-        // produit 30
-        Statut statut3001 = new Statut(3001, "produit", "disponible");
-        Statut statut3002 = new Statut(3002, "produit", "indisponible");
-        
-        // ingredient 40
-        Statut statut4001 = new Statut(4001, "ingredient", "disponible");
-        Statut statut4002 = new Statut(4001, "ingredient", "indisponible");
-        
-        // formule 50 
-        Statut statut5001 = new Statut(5001, "formule", "disponible");
-        Statut statut5002 = new Statut(5002, "formule", "indisponible");
-        
-        //emplacement 60
-        Statut statut6001 = new Statut(6001, "emplacement", "disponible");
-        Statut statut6002 = new Statut(6002, "emplacement", "occupé");
-        Statut statut6003 = new Statut(6003, "emplacement", "réservé");
-        Statut statut6004 = new Statut(6004, "emplacement", "indisponible");
         
         //==================================================================================|
         //                                        Formules                                    |

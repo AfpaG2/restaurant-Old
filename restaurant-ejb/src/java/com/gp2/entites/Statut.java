@@ -17,7 +17,7 @@ import javax.persistence.OneToMany;
 public class Statut implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @Id    
+    @Id 
     private int id;
     @Column(nullable = false) 
     private String nomStatut;
