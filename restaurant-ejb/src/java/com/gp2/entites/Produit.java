@@ -25,10 +25,10 @@ public class Produit implements Serializable {
     private String image;
     
     // propriétés pour les associations
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     private CodeTVA codeTVA;
     
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     private Statut statut;
     
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
@@ -62,7 +62,6 @@ public class Produit implements Serializable {
         typePlats = new ArrayList();
         ligneCommandes = new ArrayList();
         natureProduits = new ArrayList();
-
     }
 
     public Produit(String nomProduit) {

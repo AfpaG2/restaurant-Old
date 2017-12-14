@@ -1,5 +1,6 @@
 package com.gp2.data;
 
+import com.gp2.entites.Emplacement;
 import com.gp2.entites.Formule;
 import com.gp2.entites.InfosProduit;
 import com.gp2.entites.Ingredient;
@@ -19,183 +20,6 @@ public class CreationData implements CreationDataLocal {
 
     @Override
     public void creerDonnees() {
-       
-        Ingredient ing01 = new Ingredient("Boeuf");
-        Ingredient ing02 = new Ingredient("Nouilles de riz");
-        Ingredient ing03 = new Ingredient("Basilic");
-        Ingredient ing04 = new Ingredient("Coriandre");
-        Ingredient ing05 = new Ingredient("Menthe");
-        Ingredient ing06 = new Ingredient("Ciboule ");
-        Ingredient ing07 = new Ingredient("Citron vert");
-        Ingredient ing08 = new Ingredient("Glaçons");
-        Ingredient ing09 = new Ingredient("Rhum blanc");
-        Ingredient ing10 = new Ingredient("Sirop de sucre de canne");
-        Ingredient ing11 = new Ingredient("Eau gazeuse");
-        Ingredient ing12 = new Ingredient("Liqueur d'oranges"); 
-        Ingredient ing13 = new Ingredient("Jus de canneberge"); 
-        Ingredient ing14 = new Ingredient("Vodka");
-        Ingredient ing15 = new Ingredient("Martini");   
-        Ingredient ing16 = new Ingredient("Jus de litchi");  
-        Ingredient ing17 = new Ingredient("Litchi");         
-        Ingredient ingd01 = new Ingredient("Cassis");
-        Ingredient ingd02 = new Ingredient("pêche");        
-        Ingredient ingd03 = new Ingredient("Liqueur de pamplemousse");
-        Ingredient ingd04 = new Ingredient("Rosé");                
-        
-        Ingredient ing001 = new Ingredient("Echine de porc");
-        Ingredient ing002 = new Ingredient("Ails");
-        Ingredient ing003 = new Ingredient("Sauce d'huître");
-        Ingredient ing004 = new Ingredient("Concombre");
-        Ingredient ing005 = new Ingredient("Carottes");
-        Ingredient ing006 = new Ingredient("Vinaigre d'alcool blanc au citron");
-        Ingredient ing007 = new Ingredient("Vermicelles de soja");
-        Ingredient ing008 = new Ingredient("Steak");
-        Ingredient ing009 = new Ingredient("Carottes râpées");
-        Ingredient ing010 = new Ingredient("Soja frais");
-        Ingredient ing011 = new Ingredient("Salades sucrines");
-        Ingredient ing012 = new Ingredient("Cacahuètes");
-        Ingredient ing013 = new Ingredient("Echalote");                      
-        Ingredient ing014 = new Ingredient("Citrons");      
-        Ingredient ing017 = new Ingredient("Sauce Nuoc Mam");
-        Ingredient ing018 = new Ingredient("Tabasco");
-        Ingredient ing019 = new Ingredient("Blancs de poulet");
-        Ingredient ing020 = new Ingredient("Tomates");
-        Ingredient ing021 = new Ingredient("Oignon rouge");                     
-        Ingredient ing022 = new Ingredient("Curry");
-        Ingredient ing023 = new Ingredient("Gingembre");
-        Ingredient ing025 = new Ingredient("Huile d'olive");
-        Ingredient ing026 = new Ingredient("Poivre");
-        Ingredient ing027 = new Ingredient("Sel");
-        Ingredient ing028 = new Ingredient("Calamars en anneaux");                 
-        Ingredient ing029 = new Ingredient("Morceau de gingembre");
-        Ingredient ing030 = new Ingredient("Poivron jaune");
-        Ingredient ing031 = new Ingredient("Poivron vert");
-        Ingredient ing032 = new Ingredient("Oignon");
-        Ingredient ing033 = new Ingredient("Huile d'olive");
-        Ingredient ing034 = new Ingredient("Piment");
-        Ingredient ing036 = new Ingredient("Crevette");
-        Ingredient ing037 = new Ingredient("Cacine de lotus");
-        Ingredient ing039 = new Ingredient("Poivron rouge");                       
-        Ingredient ing040 = new Ingredient("vinaigre blanc de riz");
-        Ingredient ing041 = new Ingredient("sucre"); 
-        
-        // Ingredients rajoutés par Ibrahim
-        Ingredient ing150 = new Ingredient("Pates de riz");     
-        Ingredient ing151 = new Ingredient("Filet de Boeuf");
-        Ingredient ing152 = new Ingredient("Pousse de Haricot Mungo");
-        Ingredient ing153 = new Ingredient("Ciboulettes");
-        Ingredient ing154 = new Ingredient("Sauce de Soja");
-        Ingredient ing155 = new Ingredient("Huile");
-        Ingredient ing156 = new Ingredient("Sésame");
-
-        Ingredient ing157 = new Ingredient("Oeufs");
-        Ingredient ing158 = new Ingredient("Huile Tournesol");
-        Ingredient ing159 = new Ingredient("Sauce Maggi");
-        Ingredient ing160 = new Ingredient("Jambon en dés");
-        Ingredient ing161 = new Ingredient("Petits Pois");
-        Ingredient ing162 = new Ingredient("Gros Oignon");
-        Ingredient ing163 = new Ingredient("riz");
-
-        Ingredient ing164 = new Ingredient("Poivre Noir");
-        Ingredient ing165 = new Ingredient("Batavia");
-        Ingredient ing166 = new Ingredient("Tige Menthe");
-        Ingredient ing167 = new Ingredient("Petits Nems");
-        Ingredient ing168 = new Ingredient("Boeuf Tendre");
-        Ingredient ing169 = new Ingredient("Tige de Coriandre");
-        Ingredient ing170 = new Ingredient("Vermicelles de riz");
-
-        Ingredient ing171 = new Ingredient("Caramel Maison");
-        Ingredient ing172 = new Ingredient("Poitrine de Porc");
-        Ingredient ing173 = new Ingredient("Champignons noirs réhydratés");
-        Ingredient ing174 = new Ingredient("Courgette");
-        Ingredient ing175 = new Ingredient("Vermicelles chinois");
-        Ingredient ing176 = new Ingredient("Feuilles de riz");
-        Ingredient ing177 = new Ingredient("Huile d'arachide");
-        Ingredient ing178 = new Ingredient("Poivron Vert");
-        Ingredient ing179 = new Ingredient("RumSteack ou Noix de Basse Côte");
-
-        Ingredient ing180 = new Ingredient("Haut de cuisse (paquet de trois)");
-        Ingredient ing181 = new Ingredient("Echalotes coupées finement");
-        Ingredient ing182 = new Ingredient("Boite de pâte Wong ton");
-        Ingredient ing183 = new Ingredient("Porc haché maigre cru");
-        Ingredient ing184 = new Ingredient("Bouillon de poulet fait maison");
-
-        Ingredient ing185 = new Ingredient("Oignon Blanc");
-        Ingredient ing186 = new Ingredient("Purée de Tamarin");
-        Ingredient ing187 = new Ingredient("Cacahuètes concassées");
-        Ingredient ing188 = new Ingredient("Nouilles de Riz");
-        Ingredient ing189 = new Ingredient("Filet de Poulet");
-        Ingredient ing190 = new Ingredient("Pousse d'épinards fraiches");
-        Ingredient ing191 = new Ingredient("Gingembre en poudre");
-        Ingredient ing192 = new Ingredient("Curcumin");
-        Ingredient ing193 = new Ingredient("Ail écrasé");
-        
-        Ingredient ing194 = new Ingredient("Nouilles aux oeufs Suzi Wan");
-        Ingredient ing195 = new Ingredient("blanc de poulet");
-        Ingredient ing196 = new Ingredient("Vinaigre Balsamique");
-        Ingredient ing197 = new Ingredient("Légumes shop suey");
-        Ingredient ing198 = new Ingredient("Germes de soja ");
-        Ingredient ing199 = new Ingredient("Huile végétale");
-        
-        // Ingrédients utilisés en déssert (Ibrahim)
-        Ingredient ing200 = new Ingredient("Banane");
-        Ingredient ing201 = new Ingredient("Sucre vanillé");
-        Ingredient ing202 = new Ingredient("Lait");   
-        Ingredient ing203 = new Ingredient("Lait de Coco");   
-        Ingredient ing204 = new Ingredient("Perles de Tapioca"); 
-          
-        Ingredient ing205 = new Ingredient("Farine");   
-        Ingredient ing206 = new Ingredient("Eau");   
-        Ingredient ing207 = new Ingredient("Beurre");   
-        Ingredient ing208 = new Ingredient("Nutella");   
-        Ingredient ing209 = new Ingredient("Jaune d'oeuf");
-
-        Ingredient ing210 = new Ingredient("Jus de citron");   
-        Ingredient ing211 = new Ingredient("Gousse de vanille");   
-        Ingredient ing212 = new Ingredient("Litchi au sirop");
-
-        Ingredient ing213 = new Ingredient("Chocolat noir spécial");   
-        Ingredient ing214 = new Ingredient("Fécule de maïs");   
-        Ingredient ing215 = new Ingredient("Noix de Coco râpée");
-           
-        Ingredient ing216 = new Ingredient("Glace vanille");   
-        Ingredient ing217 = new Ingredient("Glace au chocolat");
-           
-        Ingredient ing218 = new Ingredient("Ananas");   
-        Ingredient ing219 = new Ingredient("Orange");   
-        Ingredient ing220 = new Ingredient("Papaye");   
-        Ingredient ing221 = new Ingredient("Kiwi");   
-        Ingredient ing222 = new Ingredient("Mangue");   
-        Ingredient ing223 = new Ingredient("Baton de Cannelle");   
-        Ingredient ing224 = new Ingredient("Poivre de Sichuan");
-           
-        Ingredient ing225 = new Ingredient("Biscuit au chocolat");   
-        Ingredient ing226 = new Ingredient("avocat");   
-        Ingredient ing227 = new Ingredient("Chocolat au lait fondu");   
-        Ingredient ing228 = new Ingredient("Lait concentré sucré");  
-        Ingredient ing229 = new Ingredient("Rhum");   
-        Ingredient ing230 = new Ingredient("Noix du brésil"); 
-
-        Ingredient ing231 = new Ingredient("Haricots noirs secs"); 
-        Ingredient ing232 = new Ingredient("Lotus au sirop");
-
-        Ingredient ing233 = new Ingredient("Taro (Khoai Môn Cao)"); 
-        Ingredient ing234 = new Ingredient("Riz gluant"); 
-        Ingredient ing235 = new Ingredient("Feuilles de Pandanus fraiches"); 
-        
-        Ingredient ing236 = new Ingredient("Cornilles ou doliques à oeil noir (Haricot)"); 
-        Ingredient ing237 = new Ingredient("Bicarbonate de Sodium"); 
-        Ingredient ing238 = new Ingredient("Extrait de vanille");  
-        Ingredient ing239 = new Ingredient("Amidon de Maïs");
-                  
-        
-        InfosProduit infosPr01 = new InfosProduit("volume","50","cl");
-        InfosProduit infosPr02 = new InfosProduit("volume","12.5","cl");
-        InfosProduit infosPr03 = new InfosProduit("volume","50","cl");
-        InfosProduit infosPr04 = new InfosProduit("volume","12.5","cl");
-        InfosProduit infosPr05 = new InfosProduit("volume","50","cl");
-        InfosProduit infosPr06 = new InfosProduit("volume","12.5","cl");
-        InfosProduit infosPr07 = new InfosProduit("Alcool","Sans alcool");
         
         //==================================================================================|
         //                                      statut                                      |
@@ -234,21 +58,409 @@ public class CreationData implements CreationDataLocal {
         Statut statut6004 = new Statut(6004, "emplacement", "indisponible");
        
 
+        Emplacement Empl01 = new Emplacement("10",2);
+        Empl01.setStatut(statut6001);
+        Emplacement Empl02 = new Emplacement("11",2);
+        Empl02.setStatut(statut6001);
+        Emplacement Empl03 = new Emplacement("12",2);
+        Empl03.setStatut(statut6001);
+        Emplacement Empl04 = new Emplacement("13",2);
+        Empl04.setStatut(statut6001);
+        Emplacement Empl05 = new Emplacement("14",2);
+        Empl05.setStatut(statut6001);
+        Emplacement Empl06 = new Emplacement("15",2);
+        Empl06.setStatut(statut6001);
+        Emplacement Empl07 = new Emplacement("16",6);
+        Empl07.setStatut(statut6001);
+        Emplacement Empl08 = new Emplacement("17",6);
+        Empl08.setStatut(statut6001);
+        Emplacement Empl09 = new Emplacement("18",6);
+        Empl09.setStatut(statut6001);
+        Emplacement Empl10 = new Emplacement("19",6);
+        Empl10.setStatut(statut6001);
+        Emplacement Empl11 = new Emplacement("20",6);
+        Empl11.setStatut(statut6001);
+        Emplacement Empl12 = new Emplacement("21",4);
+        Empl12.setStatut(statut6001);
+        Emplacement Empl13 = new Emplacement("22",4);
+        Empl13.setStatut(statut6001);
+        Emplacement Empl14 = new Emplacement("23",4);
+        Empl14.setStatut(statut6001);
+        Emplacement Empl15 = new Emplacement("24",4);
+        Empl15.setStatut(statut6001);
+        Emplacement Empl16 = new Emplacement("25",4);
+        Empl16.setStatut(statut6001);
+        Emplacement Empl17 = new Emplacement("26",4);
+        Empl17.setStatut(statut6001);
+        Emplacement Empl18 = new Emplacement("27",4);
+        Empl18.setStatut(statut6001);        
+        Emplacement Empl19 = new Emplacement("28",4);
+        Empl19.setStatut(statut6001);
+        Emplacement Empl20 = new Emplacement("29",4);
+        Empl20.setStatut(statut6001);
+        Emplacement Empl21 = new Emplacement("30",8);
+        Empl21.setStatut(statut6001);
+        Emplacement Empl22 = new Emplacement("31",8);
+        Empl22.setStatut(statut6001);
+        Emplacement Empl23 = new Emplacement("32",8);
+        Empl23.setStatut(statut6001);
+        Emplacement Empl24 = new Emplacement("33",10);
+        Empl24.setStatut(statut6001);
+        Emplacement Empl25 = new Emplacement("34",10);
+        Empl25.setStatut(statut6001);
+        Emplacement Empl26 = new Emplacement("35",10);
+        Empl26.setStatut(statut6001);
+        Emplacement Empl27 = new Emplacement("36",10);
+        Empl27.setStatut(statut6001);
+        Emplacement Empl28 = new Emplacement("37",10);
+        Empl28.setStatut(statut6001);
+        
+        
+        
+        
+       
+        Ingredient ing01 = new Ingredient("Boeuf");
+        ing01.setStatut(statut4001);
+        Ingredient ing02 = new Ingredient("Nouilles de riz");
+        ing02.setStatut(statut4001);
+        Ingredient ing03 = new Ingredient("Basilic");
+        ing03.setStatut(statut4001);
+        Ingredient ing04 = new Ingredient("Coriandre");
+        ing04.setStatut(statut4001);
+        Ingredient ing05 = new Ingredient("Menthe");
+        ing05.setStatut(statut4001);
+        Ingredient ing06 = new Ingredient("Ciboule ");
+        ing06.setStatut(statut4001);
+        Ingredient ing07 = new Ingredient("Citron vert");
+        ing07.setStatut(statut4001);
+        Ingredient ing08 = new Ingredient("Glaçons");
+        ing08.setStatut(statut4001);
+        Ingredient ing09 = new Ingredient("Rhum blanc");
+        ing09.setStatut(statut4001);
+        Ingredient ing10 = new Ingredient("Sirop de sucre de canne");
+        ing10.setStatut(statut4001);
+        Ingredient ing11 = new Ingredient("Eau gazeuse");
+        ing11.setStatut(statut4001);
+        Ingredient ing12 = new Ingredient("Liqueur d'oranges"); 
+        ing12.setStatut(statut4001);
+        Ingredient ing13 = new Ingredient("Jus de canneberge");
+        ing13.setStatut(statut4001);
+        Ingredient ing14 = new Ingredient("Vodka");
+        ing14.setStatut(statut4001);
+        Ingredient ing15 = new Ingredient("Martini"); 
+        ing15.setStatut(statut4001);
+        Ingredient ing16 = new Ingredient("Jus de litchi");
+        ing16.setStatut(statut4001);
+        Ingredient ing17 = new Ingredient("Litchi");  
+        ing17.setStatut(statut4001);
+        Ingredient ingd01 = new Ingredient("Cassis");
+        ingd01.setStatut(statut4001);
+        Ingredient ingd02 = new Ingredient("pêche");   
+        ingd02.setStatut(statut4001);
+        Ingredient ingd03 = new Ingredient("Liqueur de pamplemousse");
+        ingd03.setStatut(statut4001);
+        Ingredient ingd04 = new Ingredient("Rosé"); 
+        ingd04.setStatut(statut4001);
+        
+        Ingredient ing001 = new Ingredient("Echine de porc");
+        ing001.setStatut(statut4001);
+        Ingredient ing002 = new Ingredient("Ails");
+        ing002.setStatut(statut4001);
+        Ingredient ing003 = new Ingredient("Sauce d'huître");
+        ing003.setStatut(statut4001);
+        Ingredient ing004 = new Ingredient("Concombre");
+        ing004.setStatut(statut4001);
+        Ingredient ing005 = new Ingredient("Carottes");
+        ing005.setStatut(statut4001);
+        Ingredient ing006 = new Ingredient("Vinaigre d'alcool blanc au citron");
+        ing006.setStatut(statut4001);
+        Ingredient ing007 = new Ingredient("Vermicelles de soja");
+        ing007.setStatut(statut4001);
+        Ingredient ing008 = new Ingredient("Steak");
+        ing008.setStatut(statut4001);
+        Ingredient ing009 = new Ingredient("Carottes râpées");
+        ing009.setStatut(statut4001);
+        Ingredient ing010 = new Ingredient("Soja frais");
+        ing010.setStatut(statut4001);
+        Ingredient ing011 = new Ingredient("Salades sucrines");
+        ing011.setStatut(statut4001);
+        Ingredient ing012 = new Ingredient("Cacahuètes");
+        ing012.setStatut(statut4001);
+        Ingredient ing013 = new Ingredient("Echalote"); 
+        ing013.setStatut(statut4001);
+        Ingredient ing014 = new Ingredient("Citrons");   
+        ing014.setStatut(statut4001);
+        Ingredient ing017 = new Ingredient("Sauce Nuoc Mam");
+        ing017.setStatut(statut4001);
+        Ingredient ing018 = new Ingredient("Tabasco");
+        ing018.setStatut(statut4001);
+        Ingredient ing019 = new Ingredient("Blancs de poulet");
+        ing019.setStatut(statut4001);
+        Ingredient ing020 = new Ingredient("Tomates");
+        ing020.setStatut(statut4001);
+        Ingredient ing021 = new Ingredient("Oignon rouge"); 
+        ing021.setStatut(statut4001);
+        Ingredient ing022 = new Ingredient("Curry");
+        ing022.setStatut(statut4001);
+        Ingredient ing023 = new Ingredient("Gingembre");
+        ing023.setStatut(statut4001);
+        Ingredient ing025 = new Ingredient("Huile d'olive");
+        ing025.setStatut(statut4001);
+        Ingredient ing026 = new Ingredient("Poivre");
+        ing026.setStatut(statut4001);
+        Ingredient ing027 = new Ingredient("Sel");
+        ing027.setStatut(statut4001);
+        Ingredient ing028 = new Ingredient("Calamars en anneaux");  
+        ing028.setStatut(statut4001);
+        Ingredient ing029 = new Ingredient("Morceau de gingembre");
+        ing029.setStatut(statut4001);
+        Ingredient ing030 = new Ingredient("Poivron jaune");
+        ing030.setStatut(statut4001);
+        Ingredient ing031 = new Ingredient("Poivron vert");
+        ing031.setStatut(statut4001);
+        Ingredient ing032 = new Ingredient("Oignon");
+        ing032.setStatut(statut4001);
+        Ingredient ing033 = new Ingredient("Huile d'olive");
+        ing033.setStatut(statut4001);
+        Ingredient ing034 = new Ingredient("Piment");
+        ing034.setStatut(statut4001);
+        Ingredient ing036 = new Ingredient("Crevette");
+        ing036.setStatut(statut4001);
+        Ingredient ing037 = new Ingredient("Cacine de lotus");
+        ing037.setStatut(statut4001);
+        Ingredient ing039 = new Ingredient("Poivron rouge");  
+        ing039.setStatut(statut4001);
+        Ingredient ing040 = new Ingredient("vinaigre blanc de riz");
+        ing040.setStatut(statut4001);
+        Ingredient ing041 = new Ingredient("sucre"); 
+        ing041.setStatut(statut4001);
+        
+        // Ingredients rajoutés par Ibrahim
+        Ingredient ing150 = new Ingredient("Pates de riz");    
+        ing150.setStatut(statut4001);
+        Ingredient ing151 = new Ingredient("Filet de Boeuf");
+        ing151.setStatut(statut4001);
+        Ingredient ing152 = new Ingredient("Pousse de Haricot Mungo");
+        ing152.setStatut(statut4001);
+        Ingredient ing153 = new Ingredient("Ciboulettes");
+        ing153.setStatut(statut4001);
+        Ingredient ing154 = new Ingredient("Sauce de Soja");
+        ing154.setStatut(statut4001);
+        Ingredient ing155 = new Ingredient("Huile");
+        ing155.setStatut(statut4001);
+        Ingredient ing156 = new Ingredient("Sésame");
+        ing156.setStatut(statut4001);
+
+        Ingredient ing157 = new Ingredient("Oeufs");
+        ing157.setStatut(statut4001);
+        Ingredient ing158 = new Ingredient("Huile Tournesol");
+        ing158.setStatut(statut4001);
+        Ingredient ing159 = new Ingredient("Sauce Maggi");
+        ing159.setStatut(statut4001);
+        Ingredient ing160 = new Ingredient("Jambon en dés");
+        ing160.setStatut(statut4001);
+        Ingredient ing161 = new Ingredient("Petits Pois");
+        ing161.setStatut(statut4001);
+        Ingredient ing162 = new Ingredient("Gros Oignon");
+        ing162.setStatut(statut4001);
+        Ingredient ing163 = new Ingredient("riz");
+        ing163.setStatut(statut4001);
+
+        Ingredient ing164 = new Ingredient("Poivre Noir");
+        ing164.setStatut(statut4001);
+        Ingredient ing165 = new Ingredient("Batavia");
+        ing165.setStatut(statut4001);
+        Ingredient ing166 = new Ingredient("Tige Menthe");
+        ing166.setStatut(statut4001);
+        Ingredient ing167 = new Ingredient("Petits Nems");
+        ing167.setStatut(statut4001);
+        Ingredient ing168 = new Ingredient("Boeuf Tendre");
+        ing168.setStatut(statut4001);
+        Ingredient ing169 = new Ingredient("Tige de Coriandre");
+        ing169.setStatut(statut4001);
+        Ingredient ing170 = new Ingredient("Vermicelles de riz");
+        ing170.setStatut(statut4001);
+
+        Ingredient ing171 = new Ingredient("Caramel Maison");
+        ing171.setStatut(statut4001);
+        Ingredient ing172 = new Ingredient("Poitrine de Porc");
+        ing172.setStatut(statut4001);
+        Ingredient ing173 = new Ingredient("Champignons noirs réhydratés");
+        ing173.setStatut(statut4001);
+        Ingredient ing174 = new Ingredient("Courgette");
+        ing174.setStatut(statut4001);
+        Ingredient ing175 = new Ingredient("Vermicelles chinois");
+        ing175.setStatut(statut4001);
+        Ingredient ing176 = new Ingredient("Feuilles de riz");
+        ing176.setStatut(statut4001);
+        Ingredient ing177 = new Ingredient("Huile d'arachide");
+        ing177.setStatut(statut4001);
+        Ingredient ing178 = new Ingredient("Poivron Vert");
+        ing178.setStatut(statut4001);
+        Ingredient ing179 = new Ingredient("RumSteack ou Noix de Basse Côte");
+        ing179.setStatut(statut4001);
+
+        Ingredient ing180 = new Ingredient("Haut de cuisse (paquet de trois)");
+        ing180.setStatut(statut4001);
+        Ingredient ing181 = new Ingredient("Echalotes coupées finement");
+        ing181.setStatut(statut4001);
+        Ingredient ing182 = new Ingredient("Boite de pâte Wong ton");
+        ing182.setStatut(statut4001);
+        Ingredient ing183 = new Ingredient("Porc haché maigre cru");
+        ing183.setStatut(statut4001);
+        Ingredient ing184 = new Ingredient("Bouillon de poulet fait maison");
+        ing184.setStatut(statut4001);
+
+        Ingredient ing185 = new Ingredient("Oignon Blanc");
+        ing185.setStatut(statut4001);
+        Ingredient ing186 = new Ingredient("Purée de Tamarin");
+        ing186.setStatut(statut4001);
+        Ingredient ing187 = new Ingredient("Cacahuètes concassées");
+        ing187.setStatut(statut4001);
+        Ingredient ing188 = new Ingredient("Nouilles de Riz");
+        ing188.setStatut(statut4001);
+        Ingredient ing189 = new Ingredient("Filet de Poulet");
+        ing189.setStatut(statut4001);
+        Ingredient ing190 = new Ingredient("Pousse d'épinards fraiches");
+        ing190.setStatut(statut4001);
+        Ingredient ing191 = new Ingredient("Gingembre en poudre");
+        ing191.setStatut(statut4001);
+        Ingredient ing192 = new Ingredient("Curcumin");
+        ing192.setStatut(statut4001);
+        Ingredient ing193 = new Ingredient("Ail écrasé");
+        ing193.setStatut(statut4001);
+        
+        Ingredient ing194 = new Ingredient("Nouilles aux oeufs Suzi Wan");
+        ing194.setStatut(statut4001);
+        Ingredient ing195 = new Ingredient("blanc de poulet");
+        ing195.setStatut(statut4001);
+        Ingredient ing196 = new Ingredient("Vinaigre Balsamique");
+        ing196.setStatut(statut4001);
+        Ingredient ing197 = new Ingredient("Légumes shop suey");
+        ing197.setStatut(statut4001);
+        Ingredient ing198 = new Ingredient("Germes de soja ");
+        ing198.setStatut(statut4001);
+        Ingredient ing199 = new Ingredient("Huile végétale");
+        ing199.setStatut(statut4001);
+        
+        // Ingrédients utilisés en déssert (Ibrahim)
+        Ingredient ing200 = new Ingredient("Banane");
+        ing200.setStatut(statut4001);
+        Ingredient ing201 = new Ingredient("Sucre vanillé");
+        ing201.setStatut(statut4001);
+        Ingredient ing202 = new Ingredient("Lait");
+        ing202.setStatut(statut4001);
+        Ingredient ing203 = new Ingredient("Lait de Coco"); 
+        ing203.setStatut(statut4001);
+        Ingredient ing204 = new Ingredient("Perles de Tapioca"); 
+        ing204.setStatut(statut4001);
+        
+        Ingredient ing205 = new Ingredient("Farine");   
+        ing205.setStatut(statut4001);
+        Ingredient ing206 = new Ingredient("Eau");   
+        ing206.setStatut(statut4001);
+        Ingredient ing207 = new Ingredient("Beurre");   
+        ing207.setStatut(statut4001);
+        Ingredient ing208 = new Ingredient("Nutella");
+        ing208.setStatut(statut4001);
+        Ingredient ing209 = new Ingredient("Jaune d'oeuf");
+        ing209.setStatut(statut4001);
+
+        Ingredient ing210 = new Ingredient("Jus de citron");   
+        ing210.setStatut(statut4001);
+        Ingredient ing211 = new Ingredient("Gousse de vanille");   
+        ing211.setStatut(statut4001);
+        Ingredient ing212 = new Ingredient("Litchi au sirop");
+        ing212.setStatut(statut4001);
+
+        Ingredient ing213 = new Ingredient("Chocolat noir spécial");
+        ing213.setStatut(statut4001);
+        Ingredient ing214 = new Ingredient("Fécule de maïs");   
+        ing214.setStatut(statut4001);
+        Ingredient ing215 = new Ingredient("Noix de Coco râpée");
+        ing215.setStatut(statut4001);
+           
+        Ingredient ing216 = new Ingredient("Glace vanille");   
+        ing216.setStatut(statut4001);
+        Ingredient ing217 = new Ingredient("Glace au chocolat");
+        ing217.setStatut(statut4001);
+           
+        Ingredient ing218 = new Ingredient("Ananas");  
+        ing218.setStatut(statut4001);
+        Ingredient ing219 = new Ingredient("Orange"); 
+        ing219.setStatut(statut4001);
+        Ingredient ing220 = new Ingredient("Papaye");   
+        ing220.setStatut(statut4001);
+        Ingredient ing221 = new Ingredient("Kiwi");   
+        ing221.setStatut(statut4001);
+        Ingredient ing222 = new Ingredient("Mangue");   
+        ing222.setStatut(statut4001);
+        Ingredient ing223 = new Ingredient("Baton de Cannelle");   
+        ing223.setStatut(statut4001);
+        Ingredient ing224 = new Ingredient("Poivre de Sichuan");
+        ing224.setStatut(statut4001);
+           
+        Ingredient ing225 = new Ingredient("Biscuit au chocolat");   
+        ing225.setStatut(statut4001);
+        Ingredient ing226 = new Ingredient("avocat");   
+        ing226.setStatut(statut4001);
+        Ingredient ing227 = new Ingredient("Chocolat au lait fondu");   
+        ing227.setStatut(statut4001);
+        Ingredient ing228 = new Ingredient("Lait concentré sucré");  
+        ing228.setStatut(statut4001);
+        Ingredient ing229 = new Ingredient("Rhum");   
+        ing229.setStatut(statut4001);
+        Ingredient ing230 = new Ingredient("Noix du brésil"); 
+        ing230.setStatut(statut4001);
+
+        Ingredient ing231 = new Ingredient("Haricots noirs secs"); 
+        ing231.setStatut(statut4001);
+        Ingredient ing232 = new Ingredient("Lotus au sirop");
+        ing232.setStatut(statut4001);
+
+        Ingredient ing233 = new Ingredient("Taro (Khoai Môn Cao)"); 
+        ing233.setStatut(statut4001);
+        Ingredient ing234 = new Ingredient("Riz gluant"); 
+        ing234.setStatut(statut4001);
+        Ingredient ing235 = new Ingredient("Feuilles de Pandanus fraiches"); 
+        ing235.setStatut(statut4001);
+        
+        Ingredient ing236 = new Ingredient("Cornilles ou doliques à oeil noir (Haricot)"); 
+        ing236.setStatut(statut4001);
+        Ingredient ing237 = new Ingredient("Bicarbonate de Sodium"); 
+        ing237.setStatut(statut4001);
+        Ingredient ing238 = new Ingredient("Extrait de vanille");  
+        ing238.setStatut(statut4001);
+        Ingredient ing239 = new Ingredient("Amidon de Maïs");
+        ing239.setStatut(statut4001);
+                  
+        
+        InfosProduit infosPr01 = new InfosProduit("volume","50","cl");
+        InfosProduit infosPr02 = new InfosProduit("volume","12.5","cl");
+        InfosProduit infosPr03 = new InfosProduit("volume","50","cl");
+        InfosProduit infosPr04 = new InfosProduit("volume","12.5","cl");
+        InfosProduit infosPr05 = new InfosProduit("volume","50","cl");
+        InfosProduit infosPr06 = new InfosProduit("volume","12.5","cl");
+        InfosProduit infosPr07 = new InfosProduit("Alcool","Sans alcool");
+        
+        
         //==================================================================================|
         //                           Natures de produits                                    |
         //==================================================================================|              
 
-        NatureProduit np1 = new NatureProduit("NOS SALADES");
-        NatureProduit np2 = new NatureProduit("NOS SOUPES");
-        NatureProduit np3 = new NatureProduit("NOS PÂTES SAUTÉES");
-        NatureProduit np4 = new NatureProduit("NOS VIANDES");
-        NatureProduit np5 = new NatureProduit("NOS VOLAILLES");
-        NatureProduit np6 = new NatureProduit("NOS POISSONS");
-        NatureProduit np7 = new NatureProduit("NOS LEGUMES");
-        NatureProduit np8 = new NatureProduit("NOS FRUITS");
-        NatureProduit np9 = new NatureProduit("NOS FROMAGES");
-        NatureProduit np10 = new NatureProduit("NOS BOISSONS");
-        NatureProduit np11 = new NatureProduit("APERITIFS");
+        NatureProduit salades = new NatureProduit("NOS SALADES");
+        NatureProduit soupes = new NatureProduit("NOS SOUPES");
+        NatureProduit pates = new NatureProduit("NOS PÂTES SAUTÉES");
+        NatureProduit viandes = new NatureProduit("NOS VIANDES");
+        NatureProduit volailles = new NatureProduit("NOS VOLAILLES");
+        NatureProduit poissons = new NatureProduit("NOS POISSONS");
+        NatureProduit legumes = new NatureProduit("NOS LEGUMES");
+        NatureProduit fruits = new NatureProduit("NOS FRUITS");
+        NatureProduit fromages = new NatureProduit("NOS FROMAGES");
+        NatureProduit boissons = new NatureProduit("NOS BOISSONS");
+        NatureProduit aperitifs = new NatureProduit("NOS APERITIFS");
+        NatureProduit fruitMer = new NatureProduit("NOS FRUIT DE MER");
+        NatureProduit riz = new NatureProduit("NOS RIZ");
 
         //==================================================================================|
         //                                  Type de plats                                   |
@@ -257,85 +469,95 @@ public class CreationData implements CreationDataLocal {
         //==================================================================================| 
 
         TypePlat tp01 = new TypePlat("COCKTAILS");
-        
-        Produit  produit01 = new Produit("Mojito",8.5f);
+        Produit  produit01 = new Produit("Mojito", 8.5f, "mojito.jpeg");
         produit01.getIngredients().add(ing05);
         produit01.getIngredients().add(ing07);
         produit01.getIngredients().add(ing08);
         produit01.getIngredients().add(ing09);
         produit01.getIngredients().add(ing10);
-        produit01.getIngredients().add(ing11);        
+        produit01.getIngredients().add(ing11); 
+        produit01.setStatut(statut3001);
         tp01.getProduits().add(produit01);
         
         
-        
-        Produit  produit02 = new Produit("Daiquiri",8.5f);
+        Produit  produit02 = new Produit("Daiquiri", 8.5f, "daiquiri.png");
         produit02.getIngredients().add(ing09);
         produit02.getIngredients().add(ing07);
         produit02.getIngredients().add(ing10);
-        produit02.getIngredients().add(ing08);        
+        produit02.getIngredients().add(ing08);   
+        produit02.setStatut(statut3001);
         tp01.getProduits().add(produit02);
         
         
-        Produit  produit03 = new Produit("Cosmopolitan",8.5f);
+        Produit  produit03 = new Produit("Cosmopolitan",8.5f, "Cosmopolitan.jpg");
         produit03.getIngredients().add(ing07);           
         produit03.getIngredients().add(ing12);             
         produit03.getIngredients().add(ing13);              
         produit03.getIngredients().add(ing14);
+        produit03.setStatut(statut3001);
         tp01.getProduits().add(produit03);
         
         
-        Produit  produit04 = new Produit("Lychee martini",8.5f);        
+        Produit  produit04 = new Produit("Lychee martini",8.5f,"Lychee-martini.png");        
         produit04.getIngredients().add(ing07);
         produit04.getIngredients().add(ing15);
         produit04.getIngredients().add(ing16);
         produit04.getIngredients().add(ing17);
+        produit04.setStatut(statut3001);
         tp01.getProduits().add(produit04);
         
         
         
-        Produit  produit06 = new Produit("Ginger julep",8.5f);
+         Produit  produit06 = new Produit("Ginger julep",8.5f,"Ginger-julep.jpg");
+        produit06.setStatut(statut3001);
         tp01.getProduits().add(produit06);
         
         
-        Produit  produit08 = new Produit("Virgin ginger mojitoi",6.5f);
+        Produit  produit08 = new Produit("Virgin ginger mojitoi",6.5f,"Virgin-ginger-mojitoi.jpg");
         produit08.getInfosProduits().add(infosPr07);
+        produit08.setStatut(statut3001);
         tp01.getProduits().add(produit08);
         
-        Produit  produit09 = new Produit("Kir aligoté",14.5f);
+        Produit  produit09 = new Produit("Kir aligotÃ©",14.5f,"Kir-aligote.jpg");
         produit09.getInfosProduits().add(infosPr01);
         produit09.getIngredients().add(ingd02);
         produit09.getIngredients().add(ingd01);
+        produit09.setStatut(statut3001);       
         tp01.getProduits().add(produit09);
         
-        Produit  produit10 = new Produit("Kir aligoté",4f);
+        Produit  produit10 = new Produit("Kir aligote",4f,"Kir-aligote.jpg");
         produit10.getInfosProduits().add(infosPr02);
         produit10.getIngredients().add(ingd02);
         produit10.getIngredients().add(ingd01);
+        produit10.setStatut(statut3001);
         tp01.getProduits().add(produit10);
         
-        Produit  produit11 = new Produit("Kir royal",36.9f);
+        Produit  produit11 = new Produit("Kir royal",36.9f,"kir-royal.png");
         produit11.getInfosProduits().add(infosPr03);
         produit11.getIngredients().add(ingd02);
         produit11.getIngredients().add(ingd01);
+        produit11.setStatut(statut3001);
         tp01.getProduits().add(produit11);
         
-        Produit  produit12 = new Produit("Kir royal",9.5f);
+        Produit  produit12 = new Produit("Kir royal",9.5f,"kir-royal.png");
         produit12.getInfosProduits().add(infosPr04);
         produit12.getIngredients().add(ingd02);
         produit12.getIngredients().add(ingd01);
+        produit12.setStatut(statut3001);
         tp01.getProduits().add(produit12);
         
-        Produit  produit13 = new Produit("Rosé pamplemousse",14f);
+        Produit  produit13 = new Produit("RosÃ© pamplemousse",14f,"Rose-pamplemousse.jpg");
         produit13.getInfosProduits().add(infosPr05);
         produit13.getIngredients().add(ingd03);
         produit13.getIngredients().add(ingd04);
+        produit13.setStatut(statut3001);
         tp01.getProduits().add(produit13);
         
-        Produit  produit14 = new Produit("Rosé pamplemousse",3.9f);
+        Produit  produit14 = new Produit("RosÃ© pamplemousse 12",3.9f,"Rose-pamplemousse.jpg");
         produit14.getInfosProduits().add(infosPr06);
         produit14.getIngredients().add(ingd03);
         produit14.getIngredients().add(ingd04);
+        produit14.setStatut(statut3001);
         tp01.getProduits().add(produit14);
 
         //==================================================================================|
@@ -343,38 +565,46 @@ public class CreationData implements CreationDataLocal {
         //==================================================================================|
         TypePlat tp02 = new TypePlat("ENTREES");        
         // soupes
-        Produit  prdu1 = new Produit("Phô au boeuf",12.5f);
-        prdu1.getNatureProduits().add(np4);
+        Produit  prdu1 = new Produit("PhÃ´ au boeuf",12.5f,"Pho-au-boeuf.jpg");
+        soupes.getProduits().add(prdu1);        
+        prdu1.setStatut(statut3001);
         tp02.getProduits().add(prdu1);
         
         
-        Produit  prdu2 = new Produit("Phô au boeuf et boulettes",13.5f);
+        Produit  prdu2 = new Produit("PhÃ´ au boeuf et boulettes",13.5f,"Pho-au-boeuf-et-boulettes.jpg");
+        soupes.getProduits().add(prdu2);
         prdu2.getIngredients().add(ing01);
         prdu2.getIngredients().add(ing02);
         prdu2.getIngredients().add(ing03);
         prdu2.getIngredients().add(ing04);
         prdu2.getIngredients().add(ing05);
         prdu2.getIngredients().add(ing06);
+        prdu2.setStatut(statut3001);
         tp02.getProduits().add(prdu2);
         
         
         
-        Produit  prdu3 = new Produit("Phô aux légumes",12.5f);
+        Produit  prdu3 = new Produit("PhÃ´ aux lÃ©gumes",12.5f,"Pho-aux-legumes.jpg");
+        soupes.getProduits().add(prdu3);
+        prdu3.setStatut(statut3001);
         tp02.getProduits().add(prdu3);
         
         
-        Produit  prdu4 = new Produit("Mi xa xiu, porc laqué",13.1f);
+        Produit  prdu4 = new Produit("Mi xa xiu, porc laquÃ©",13.1f,"mi-xa-xiu-porc-laque.jpg");       
+        soupes.getProduits().add(prdu4);
         prdu4.getIngredients().add(ing001);
         prdu4.getIngredients().add(ing002);
         prdu4.getIngredients().add(ing003);
         prdu4.getIngredients().add(ing004);
         prdu4.getIngredients().add(ing005);
         prdu4.getIngredients().add(ing006);
+        prdu4.setStatut(statut3001);
         tp02.getProduits().add(prdu4);
         
        
       // salades        
-      Produit  prdu5 = new Produit("Salade de boeuf à la vietnamienne",11.4f);
+      Produit  prdu5 = new Produit("Salade de boeuf Ã  la vietnamienne",11.4f,"salade-de-boeuf-a-la-vietnamienne.jpg");
+      salades.getProduits().add(prdu5);
       prdu5.getIngredients().add(ing007);
       prdu5.getIngredients().add(ing05);
       prdu5.getIngredients().add(ing04);
@@ -386,9 +616,11 @@ public class CreationData implements CreationDataLocal {
       prdu5.getIngredients().add(ing014);
       prdu5.getIngredients().add(ing017);
       prdu5.getIngredients().add(ing018);
+      prdu5.setStatut(statut3001);
       tp02.getProduits().add(prdu5);
      
-      Produit  prdu6 = new Produit("Salade de poulet mariné au gingembre",10.8f);
+      Produit  prdu6 = new Produit("Salade de poulet mariné au gingembre",10.8f,"salade-de-poulet-marine-au-gingembre.jpg");
+      salades.getProduits().add(prdu6);
       prdu6.getIngredients().add(ing019);
       prdu6.getIngredients().add(ing020);
       prdu6.getIngredients().add(ing021);
@@ -399,10 +631,12 @@ public class CreationData implements CreationDataLocal {
       prdu6.getIngredients().add(ing025);
       prdu6.getIngredients().add(ing026);
       prdu6.getIngredients().add(ing027);
+      prdu6.setStatut(statut3001);
       tp02.getProduits().add(prdu6);
       
       
-      Produit  prdu7 = new Produit("Salade de calamars sautés au piment et gingembre",11.9f);
+      Produit  prdu7 = new Produit("Salade de calamars sautées au piment et gingembre",11.9f,"salade-de-calamars-sautes-au-piment-et-gingembre.jpg");
+      salades.getProduits().add(prdu7);
       prdu7.getIngredients().add(ing020);
       prdu7.getIngredients().add(ing028);
       prdu7.getIngredients().add(ing002);
@@ -412,10 +646,12 @@ public class CreationData implements CreationDataLocal {
       prdu7.getIngredients().add(ing032);
       prdu7.getIngredients().add(ing033);
       prdu7.getIngredients().add(ing034);
+      prdu7.setStatut(statut3001);
       tp02.getProduits().add(prdu7);
       
       
-      Produit  prdu8 = new Produit("Salade de lotus aux crevettes sel et poivre",12.7f);
+      Produit  prdu8 = new Produit("Salade de lotus aux crevettes sel et poivre",12.7f,"salade-de-lotus-aux-crevettes-sel-et-poivre.jpg");
+      salades.getProduits().add(prdu8);
       prdu8.getIngredients().add(ing034);
       prdu8.getIngredients().add(ing036);
       prdu8.getIngredients().add(ing037);
@@ -430,24 +666,45 @@ public class CreationData implements CreationDataLocal {
       prdu8.getIngredients().add(ing027);
       prdu8.getIngredients().add(ing040);
       prdu8.getIngredients().add(ing041);
-      tp02.getProduits().add(prdu8);   
-
-
+      prdu8.setStatut(statut3001);
+      tp02.getProduits().add(prdu8);  
+      
+      
+      
         //==================================================================================|
         //                                        PLATS                                     |
         //==================================================================================|
         TypePlat tp05 = new TypePlat("PLATS");
         
-        Produit produ1 = new Produit("Pâtes blanches de riz sautées au poulet mariné au gingembre et crevettes", 16.2f);
-        Produit produ2 = new Produit("Pâtes blanches de riz sautées au poulet mariné au gingembre", 13.9f);
-        Produit produ3 = new Produit("Pâtes blanches de riz sautées aux crevettes", 14.9f);
-        Produit produ4 = new Produit("Pâtes blanches de riz sautées aux légumes", 12.3f);
-        Produit produ5 = new Produit("Riz Cantonnais", 11.90f);
-        Produit produ6 = new Produit("Bo Bun Boeuf", 13.90f);
-        Produit produ7 = new Produit("Tit Kho, Porc au Caramel Vietnamien", 15.00f);
-        Produit produ8 = new Produit("Nems de Courgette Maison", 9.80f);
-        Produit produ9 = new Produit("Boeuf aux oignons vietnamien", 14.50f);
-        Produit produ10 = new Produit("Soupe Won Ton", 9.80f);
+         Produit produ1 = new Produit("Pates blanches de riz sautees au poulet marine au gingembre et crevettes", 16.2f, "pates-blanches-de-riz-sautees-au-poulet-marine-au-gingembre-et-crevettes.jpg");
+        Produit produ2 = new Produit("Pates blanches de riz sautees au poulet marine au gingembre", 13.9f,"pates-blanches-de-riz-sautees-au-poulet-marine-au-gingembre.jpg");
+        Produit produ3 = new Produit("Pates blanches de riz sautees aux crevettes", 14.9f,"pates-blanches-de-riz-sautees-aux-crevettes.jpg");
+        Produit produ4 = new Produit("Pates blanches de riz sautees aux legumes", 12.3f,"pates-blanches-de-riz-sautees-aux-legumes.jpg");
+        
+        fruitMer.getProduits().add(produ3);
+        pates.getProduits().add(produ1);
+        pates.getProduits().add(produ2);
+        pates.getProduits().add(produ3);
+        pates.getProduits().add(produ4);        
+        volailles.getProduits().add(produ1);
+        volailles.getProduits().add(produ2);
+        legumes.getProduits().add(produ4);
+        
+        Produit produ5 = new Produit("Riz Cantonnais", 11.90f,"riz-cantonnais.jpg");
+        riz.getProduits().add(produ5);
+        
+        Produit produ6 = new Produit("Bo Bun Boeuf", 13.90f,"bo-bun-boeuf.jpg"); 
+        viandes.getProduits().add(produ6);
+        Produit produ7 = new Produit("Tit Kho, Porc au Caramel Vietnamien", 15.00f,"tit-kho-porc-au-caramel-vietnamien.jpg");
+        viandes.getProduits().add(produ7);
+        Produit produ9 = new Produit("Boeuf aux oignons vietnamien", 14.50f,"boeuf-aux-oignons-vietnamien.jpg");
+        viandes.getProduits().add(produ9);
+        
+        Produit produ8 = new Produit("Nems de Courgette Maison", 9.80f,"nems-de-courgette-maison.jpg");
+        legumes.getProduits().add(produ8);
+        
+        Produit produ10 = new Produit("Soupe Won Ton", 9.80f,"soupe-won-ton.jpg");
+        soupes.getProduits().add(produ10);
 
         //==================================================================================|
         //                   CREATION D'INGREDIENTS COMPOSANT LES PLATS                     |
@@ -611,13 +868,13 @@ public class CreationData implements CreationDataLocal {
         //==================================================================================|
         TypePlat tp06 = new TypePlat("DESSERTS");
         
-        Produit produi1 = new Produit("Soupe de perles de tapioca au coco et à la banane", 5f);
-        Produit produi2 = new Produit("Raviolis au nutella", 6.1f);
-        Produit produi3 = new Produit("Flan au caramel et litchi", 5f);
-        Produit produi4 = new Produit("Fondant au chocolat et glace coco", 6.7f);
-        Produit produi5 = new Produit("Coupe coco, vanille, chocolat et banane", 7f);
-        Produit produi6 = new Produit("Salade de fruits frais exotiques", 6.1f);
-        Produit produi7 = new Produit("Mousse d'avocat doucement sucrée", 7f);
+        Produit produi1 = new Produit("Soupe de perles de tapioca au coco et à la banane", 5f,"soupe-de-perles-de-tapioca-au-coco-et-a-la-banane.jpg");
+        Produit produi2 = new Produit("Raviolis au nutella", 6.1f,"raviolis-au-nutella.jpg");
+        Produit produi3 = new Produit("Flan au caramel et litchi", 5f,"flan-au-caramel-et-litchi.jpg");
+        Produit produi4 = new Produit("Fondant au chocolat et glace coco", 6.7f,"fondant-au-chocolat-et-glace-coco.jpg");
+        Produit produi5 = new Produit("Coupe coco, vanille, chocolat et sauce chocolat", 7f,"coupe-coco-vanille-chocolat-et-sauce-chocolat.jpg");
+        Produit produi6 = new Produit("Salade de fruits frais exotiques", 6.1f,"salade-de-fruits-frais-exotiques.jpg");
+        Produit produi7 = new Produit("Crème d'avocat doucement sucrée", 7f,"creme-d-avocat-doucement-sucree.jpg");
         Produit produi8 = new Produit("Soupe sucrée de haricots noirs aux graines de lotus", 5.9f);
         Produit produi9 = new Produit("Porridge sucré de riz gluant au taro et lait de coco (Chè Khoai môn)", 4.9f);
         Produit produi10 = new Produit("Entremets aux Cornilles et riz gluant (Chè dâu trang)", 6.5f);
@@ -760,25 +1017,62 @@ public class CreationData implements CreationDataLocal {
         //                                        Formules                                    |
         //==================================================================================|
          
-        Formule formule01 = new Formule("con rồng vàng / le dragon d'or","entré, plat, déssert" , 25, null);
-        Formule formule02 = new Formule("con mòng biển tự hào / le fière goéland","entré, plat", 19, null);
-        Formule formule03 = new Formule("con ngựa có cánh / le cheval ailés ","plat, déssert", 20, null);
+        Formule formule01 = new Formule("con rồng vàng / le dragon d'or","entré, plat, déssert" , 25, null);        
+        TypePlat formule01Entree = new TypePlat("Entree dragon d'or");        
+        formule01Entree.getProduits().add(prdu3);
+        formule01Entree.getProduits().add(prdu4);
+        formule01Entree.getProduits().add(prdu5);
+        formule01.getTypePlats().add(formule01Entree);
+        
+        TypePlat formule01Plat = new TypePlat("Plat dragon d'or");        
+        formule01Plat.getProduits().add(produ1);
+        formule01Plat.getProduits().add(produ5);
+        formule01Plat.getProduits().add(produ8);
+        formule01.getTypePlats().add(formule01Plat);
+        
+        TypePlat formule01Dessert = new TypePlat("Dessert dragon d'or");        
+        formule01Dessert.getProduits().add(produi4);
+        formule01Dessert.getProduits().add(produi6);
+        formule01Dessert.getProduits().add(produi10);
+        formule01.getTypePlats().add(formule01Dessert);
+        
+        
+        
+        Formule formule02 = new Formule("con mòng bien tự hào / le fière goéland","entré, plat", 19, null);
+        TypePlat formule02Entree = new TypePlat("Entree le fière goéland");        
+        formule02Entree.getProduits().add(prdu1);
+        formule02Entree.getProduits().add(prdu3); 
+        formule02.getTypePlats().add(formule02Entree);
+        
+        TypePlat formule02Plat = new TypePlat("Plat le fière goéland");        
+        formule02Plat.getProduits().add(produ4);
+        formule02Plat.getProduits().add(produ6);
+        formule02Plat.getProduits().add(produ8);
+        formule02.getTypePlats().add(formule02Plat);
+        
+        Formule formule03 = new Formule("con ngựa có cánh / le cheval ailés ","plat, déssert", 20, null);        
+        TypePlat formule03Plat = new TypePlat("Plat le fière goéland");        
+        formule03Plat.getProduits().add(produ3);
+        formule03Plat.getProduits().add(produ7);
+        formule03Plat.getProduits().add(produ8);
+        formule03.getTypePlats().add(formule03Plat);
+        
+        TypePlat formule03Dessert = new TypePlat("Dessert dragon d'or");         
+        formule03Dessert.getProduits().add(produi4);
+        formule03Dessert.getProduits().add(produi5);
+        formule03Dessert.getProduits().add(produi8);
+        formule03.getTypePlats().add(formule03Dessert);
         
         //==================================================================================|
         //                                        TypePlats                                  |
         //==================================================================================|
+              
         
-        TypePlat typePlat01 = new TypePlat("entré");
-        TypePlat typePlat02 = new TypePlat("déssert");
-        TypePlat typePlat03 = new TypePlat("plat");
-        TypePlat typePlat04 = new TypePlat("apéritifs");
         
-        em.persist(typePlat01);
-        em.persist(typePlat02);
-        em.persist(typePlat03);
         em.persist(formule01);
         em.persist(formule02);
         em.persist(formule03);
+        
         em.persist(statut1001);
         em.persist(statut1002);
         em.persist(statut1003);
@@ -800,28 +1094,67 @@ public class CreationData implements CreationDataLocal {
         em.persist(statut6002);
         em.persist(statut6003);
         em.persist(statut6004);
+        
         em.persist(tp01);
         em.persist(tp02);        
         em.persist(tp05);
         em.persist(tp06);
         em.persist(tp07);
-        em.persist(tp07);
+       
+        
+        em.persist(salades);
+        em.persist(soupes);
+        em.persist(pates);
+        em.persist(viandes);
+        em.persist(volailles);
+        em.persist(poissons);
+        em.persist(legumes);
+        em.persist(fruits);
+        em.persist(fromages);
+        em.persist(boissons);
+        em.persist(aperitifs);        
+        em.persist(fruitMer);
+        em.persist(riz);
         
         
-        em.persist(np1);
-        em.persist(np2);
-        em.persist(np3);
-        em.persist(np4);
-        em.persist(np5);
-        em.persist(np6);
-        em.persist(np7);
-        em.persist(np8);
-        em.persist(np9);
-        em.persist(np10);
-        em.persist(np11);
+        em.persist(Empl01);
+        em.persist(Empl02);
+        em.persist(Empl03);
+        em.persist(Empl04);
+        em.persist(Empl05);
+        em.persist(Empl06);
+        em.persist(Empl07);
+        em.persist(Empl08);
+        em.persist(Empl09);
+        em.persist(Empl10);
+        em.persist(Empl11);
+        em.persist(Empl12);
+        em.persist(Empl13);
+        em.persist(Empl14);
+        em.persist(Empl15);
+        em.persist(Empl16);
+        em.persist(Empl17);
+        em.persist(Empl18);
+        em.persist(Empl19);
+        em.persist(Empl20);
+        em.persist(Empl21);
+        em.persist(Empl22);
+        em.persist(Empl23);
+        em.persist(Empl24);
+        em.persist(Empl25);
+        em.persist(Empl26);
+        em.persist(Empl27);
+        em.persist(Empl28);        
+        
+        em.persist(formule01);
+        em.persist(formule02);
+        em.persist(formule03);
         
         
         em.flush();
+    
     }
+    
+
 
 }

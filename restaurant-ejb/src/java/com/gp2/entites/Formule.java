@@ -43,7 +43,7 @@ public class Formule implements Serializable {
     @OneToMany(mappedBy = "formule")
     private Collection<LigneCommande> ligneCommandes;
     
-    @ManyToMany (mappedBy = "formules")
+    @ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<TypePlat> typePlats;
     
     public Formule() {
@@ -54,13 +54,14 @@ public class Formule implements Serializable {
     public Formule(String nomFormul,String description, float prix) {
         this();
         this.nomFormul = nomFormul;
-        this.prix = prix;
         this.descrpition = description;
+        this.prix = prix;
     }
 
     public Formule(String nomFormul,String description, float prix, String image) {
         this();
         this.nomFormul = nomFormul;
+        this.descrpition = description;
         this.prix = prix;
         this.image = image;
     }
@@ -145,8 +146,14 @@ public class Formule implements Serializable {
     public void setPromotion(Promotion promotion) {
         this.promotion = promotion;
     }
-    
-    
+
+    public String getDescrpition() {
+        return descrpition;
+    }
+
+    public void setDescrpition(String descrpition) {
+        this.descrpition = descrpition;
+    }
     
     
 

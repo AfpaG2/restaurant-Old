@@ -34,7 +34,7 @@ public class TypePlat implements Serializable {
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Produit> produits;
     
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany(mappedBy = "typePlats")
     private Collection<Formule> formules;
 
     public TypePlat() {        

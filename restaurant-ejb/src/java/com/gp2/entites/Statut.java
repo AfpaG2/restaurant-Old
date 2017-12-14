@@ -51,6 +51,13 @@ public class Statut implements Serializable {
         emplacements = new ArrayList<>();        
     }
 
+    public Statut(int id) {
+        this();
+        this.id = id;
+    }
+    
+    
+
     public Statut(int id, String nomStatut, String valeurStatut) {
         this();
         this.id = id;
