@@ -1,6 +1,7 @@
 
-package com.gp2.entites;
+package com.gp2.persistence.carte;
 
+import com.gp2.persistence.Statut;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;

@@ -1,5 +1,5 @@
 
-package com.gp2.entites;
+package com.gp2.persistence.carte;
 
 import java.io.Serializable;
 import java.util.ArrayList;

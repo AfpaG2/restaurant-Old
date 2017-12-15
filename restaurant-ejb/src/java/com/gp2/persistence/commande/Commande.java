@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.gp2.entites;
+package com.gp2.persistence.commande;
 
+import com.gp2.persistence.canpany.Employe;
+import com.gp2.persistence.Statut;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;

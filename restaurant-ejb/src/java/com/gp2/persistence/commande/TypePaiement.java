@@ -1,5 +1,5 @@
 
-package com.gp2.entites;
+package com.gp2.persistence.commande;
 
 import java.io.Serializable;
 import java.util.ArrayList;
