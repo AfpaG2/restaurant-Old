@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controleurs.secondaires;
+package controleurs;
 
 import com.gp2.data.CreationDataLocal;
 import java.util.logging.Level;
@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author cdi314
  */
 public class DonneesCreateCtrl implements SousControleur{
+    
     @Override
     public String executer(HttpServletRequest request, HttpServletResponse response) {
         CreationDataLocal creationData = lookupCreationDataLocal();
@@ -46,4 +47,6 @@ public class DonneesCreateCtrl implements SousControleur{
             throw new RuntimeException(ne);
         }
     }
+
+    
 }

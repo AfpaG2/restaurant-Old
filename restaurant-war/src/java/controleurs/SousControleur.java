@@ -1,5 +1,5 @@
 
-package controleurs.secondaires;
+package controleurs;
 
 import java.io.Serializable;
 import javax.servlet.http.HttpServletRequest;

@@ -5,12 +5,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="/restaurant-war/css/votre-style.css" rel="stylesheet" type="text/css"/>
-        <title>catalogue</title>
+        <title>Carte</title>
     </head>
     <body>
         
         <div>
-            <h1>Catalogue</h1>
+            <h1>Carte</h1>
             <table>
                 <thead>
                     <tr>
@@ -31,7 +31,7 @@
                             <td>${p.prixHT}</td>
                             <td>${p.prixTTC}</td>
                             <td>
-                                <c:url value="FrontControleur?section=operations-panier&origine=catalogue&action=add&ref=${p.reference}" var="urlp" />
+                                <c:url value="FrontControleur?section=operations-panier&origine=carte&action=add&ref=${p.reference}" var="urlp" />
                                 <a href="${urlp}">ajouter au panier</a>
                             </td>
                         </tr>

@@ -1,14 +1,14 @@
 package com.gp2.data;
 
-import com.gp2.entites.CodeTVA;
-import com.gp2.entites.Emplacement;
-import com.gp2.entites.Formule;
-import com.gp2.entites.InfosProduit;
-import com.gp2.entites.Ingredient;
-import com.gp2.entites.NatureProduit;
-import com.gp2.entites.Produit;
-import com.gp2.entites.Statut;
-import com.gp2.entites.TypePlat;
+import com.gp2.persistence.carte.CodeTVA;
+import com.gp2.persistence.commande.Emplacement;
+import com.gp2.persistence.carte.Formule;
+import com.gp2.persistence.carte.InfosProduit;
+import com.gp2.persistence.carte.Ingredient;
+import com.gp2.persistence.carte.NatureProduit;
+import com.gp2.persistence.carte.Produit;
+import com.gp2.persistence.Statut;
+import com.gp2.persistence.carte.TypePlat;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

@@ -3,12 +3,8 @@
     <servlet>
         <servlet-name>FrontControleur</servlet-name>
         <servlet-class>controleurs.FrontControleur</servlet-class>
-        
         <!--
-        <init-param>
-            <param-name>catalogue-affichage</param-name>
-            <param-value>controleurs.secondaires.CatalogueAffichageCtrl</param-value>
-        </init-param>
+        
         <init-param>
             <param-name>operations-panier</param-name>
             <param-value>controleurs.secondaires.OperationsPanierCtrl</param-value>
@@ -18,10 +14,13 @@
             <param-value>controleurs.secondaires.PanierAffichageCtrl</param-value>
         </init-param>
         -->
-        
+        <init-param>
+            <param-name>carte-affichage</param-name>
+            <param-value>controleurs.client.CarteMainCtrl</param-value>
+        </init-param>
         <init-param>
             <param-name>donnees-create</param-name>
-            <param-value>controleurs.secondaires.DonneesCreateCtrl</param-value>
+            <param-value>controleurs.DonneesCreateCtrl</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
@@ -34,13 +33,13 @@
         </session-timeout>
     </session-config>
     <ejb-local-ref>
-        <ejb-ref-name>CreationData</ejb-ref-name>
+        <ejb-ref-name>GestionCatalogue</ejb-ref-name>
         <ejb-ref-type>Session</ejb-ref-type>
-        <local>com.gp2.data.CreationDataLocal</local>
-        <ejb-link>restaurant-ejb.jar#CreationData</ejb-link>
+        <local>com.gp2.metiers.GestionCatalogueLocal</local>
+        <ejb-link>restaurant-ejb.jar#GestionCatalogue</ejb-link>
     </ejb-local-ref>
     <ejb-local-ref>
-        <ejb-ref-name>CreationData1</ejb-ref-name>
+        <ejb-ref-name>CreationData</ejb-ref-name>
         <ejb-ref-type>Session</ejb-ref-type>
         <local>com.gp2.data.CreationDataLocal</local>
         <ejb-link>restaurant-ejb.jar#CreationData</ejb-link>

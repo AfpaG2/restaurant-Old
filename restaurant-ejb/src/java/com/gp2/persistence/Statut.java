@@ -3,8 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.gp2.entites;
+package com.gp2.persistence;
 
+import com.gp2.persistence.commande.Emplacement;
+import com.gp2.persistence.commande.LigneCommande;
+import com.gp2.persistence.commande.Commande;
+import com.gp2.persistence.carte.Formule;
+import com.gp2.persistence.carte.Ingredient;
+import com.gp2.persistence.carte.Produit;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
