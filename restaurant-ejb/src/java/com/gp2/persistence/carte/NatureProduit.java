@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.gp2.persistence.carte;
 
 import java.io.Serializable;
@@ -13,13 +9,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
-/**
- *
- * @author cdi314
- */
+
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "com.gp2.persistence.carte.NatureProduit.findAllNatureProduit", query = "select n from NatureProduit n"),
+    @NamedQuery(name = "com.gp2.persistence.carte.NatureProduit.findNatureProduitById", query ="select n from NatureProduit n where n.nomNatureProduit=:paramNomNatureProduit")
+})
 public class NatureProduit implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id   

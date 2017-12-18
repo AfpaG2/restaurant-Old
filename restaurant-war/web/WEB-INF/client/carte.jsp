@@ -14,25 +14,25 @@
             <table>
                 <thead>
                     <tr>
-                        <th>nom</th>
-                        <th>reference</th>
-                        <th>stock</th>
+                        <th>om Formule</th> 
+                        <th>Descrpition</th>  
+                        <th>Image</th>  
                         <th>prixHT</th>
                         <th>prixTTC</th>
                         <th>action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach items="${produits}" var="p">
+                    <c:forEach items="${formules}" var="p">
                         <tr>
-                            <td>${p.nom}</td>
-                            <td>${p.reference}</td>
-                            <td>${p.qte}</td>
-                            <td>${p.prixHT}</td>
+                            <td>${p.nomFormul}</td>
+                            <td>${p.descrpition}</td>
+                            <td>${p.image}</td>
+                            <td>${p.prix}</td>
                             <td>${p.prixTTC}</td>
                             <td>
-                                <c:url value="FrontControleur?section=operations-panier&origine=carte&action=add&ref=${p.reference}" var="urlp" />
-                                <a href="${urlp}">ajouter au panier</a>
+                                <c:url value="FrontControleur?section=catalogue&action=detail&ref=${p.id}" var="urlf" />
+                                <a href="${urlf}">Detail Formule</a>
                             </td>
                         </tr>
                     </c:forEach>

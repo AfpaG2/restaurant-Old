@@ -13,10 +13,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "com.gp2.persistence.carte.Formule.findAllFormule", query = "select f from Formule f"),
+    @NamedQuery(name = "com.gp2.persistence.carte.Formule.findFormuleById", query ="select f from Formule f where f.id=:paramId")
+})
 public class Formule implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

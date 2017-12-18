@@ -5,6 +5,8 @@
  */
 package com.gp2.metiers;
 
+import com.gp2.persistence.canpany.Employe;
+import java.util.Collection;
 import javax.ejb.Local;
 
 /**
@@ -13,5 +15,6 @@ import javax.ejb.Local;
  */
 @Local
 public interface GestionPersonnelLocal {
+    public Collection<Employe> getEmployes();
     
 }

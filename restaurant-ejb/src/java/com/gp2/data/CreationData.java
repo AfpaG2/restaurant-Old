@@ -8,7 +8,13 @@ import com.gp2.persistence.carte.Ingredient;
 import com.gp2.persistence.carte.NatureProduit;
 import com.gp2.persistence.carte.Produit;
 import com.gp2.persistence.Statut;
+import com.gp2.persistence.canpany.Employe;
+import com.gp2.persistence.canpany.Poste;
+import com.gp2.persistence.canpany.Restaurant;
+import com.gp2.persistence.carte.Carte;
 import com.gp2.persistence.carte.TypePlat;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -25,6 +31,12 @@ public class CreationData implements CreationDataLocal {
         //==================================================================================|
         //                                      statut                                      |
         //==================================================================================|
+       
+        //Carte
+        Carte carte = new Carte();
+        
+        
+        
         // commande 10
         Statut statut1001 = new Statut(1001, "commande", "commandé");
         Statut statut1002 = new Statut(1002, "commande", "en cuisine");
@@ -458,18 +470,31 @@ public class CreationData implements CreationDataLocal {
         //==================================================================================|              
 
         NatureProduit salades = new NatureProduit("NOS SALADES");
+        salades.setCarte(carte);
         NatureProduit soupes = new NatureProduit("NOS SOUPES");
+        soupes.setCarte(carte);
         NatureProduit pates = new NatureProduit("NOS PÂTES SAUTÉES");
+        pates.setCarte(carte);
         NatureProduit viandes = new NatureProduit("NOS VIANDES");
+        viandes.setCarte(carte);
         NatureProduit volailles = new NatureProduit("NOS VOLAILLES");
+        volailles.setCarte(carte);
         NatureProduit poissons = new NatureProduit("NOS POISSONS");
+        poissons.setCarte(carte);
         NatureProduit legumes = new NatureProduit("NOS LEGUMES");
+        legumes.setCarte(carte);
         NatureProduit fruits = new NatureProduit("NOS FRUITS");
+        fruits.setCarte(carte);
         NatureProduit fromages = new NatureProduit("NOS FROMAGES");
+        fromages.setCarte(carte);
         NatureProduit boissons = new NatureProduit("NOS BOISSONS");
+        boissons.setCarte(carte);
         NatureProduit aperitifs = new NatureProduit("NOS APERITIFS");
+        aperitifs.setCarte(carte);
         NatureProduit fruitMer = new NatureProduit("NOS FRUIT DE MER");
+        fruitMer.setCarte(carte);
         NatureProduit riz = new NatureProduit("NOS RIZ");
+        riz.setCarte(carte);
 
         //==================================================================================|
         //                                  Type de plats                                   |
@@ -478,6 +503,7 @@ public class CreationData implements CreationDataLocal {
         //==================================================================================| 
 
         TypePlat tp01 = new TypePlat("COCKTAILS");
+         tp01.setCarte(carte);
         Produit  produit01 = new Produit("Mojito", 8.5f, "mojito.jpeg");
         produit01.getIngredients().add(ing05);
         produit01.getIngredients().add(ing07);
@@ -591,7 +617,8 @@ public class CreationData implements CreationDataLocal {
         //==================================================================================|
         //                                        ENTREES                                   |
         //==================================================================================|
-        TypePlat tp02 = new TypePlat("ENTREES");        
+        TypePlat tp02 = new TypePlat("ENTREES"); 
+        tp02.setCarte(carte);
         // soupes
         Produit  prdu1 = new Produit("Phô au boeuf",12.5f,"Pho-au-boeuf.jpg");
         soupes.getProduits().add(prdu1);
@@ -723,6 +750,7 @@ public class CreationData implements CreationDataLocal {
         //                                        PLATS                                     |
         //==================================================================================|
         TypePlat tp05 = new TypePlat("PLATS");
+        tp05.setCarte(carte);
         
         Produit produ1 = new Produit("Pâtes blanches de riz sautées au poulet marine au gingembre et crevettes", 16.2f, "pates-blanches-de-riz-sautees-au-poulet-marine-au-gingembre-et-crevettes.jpg");
         produ1.setCodeTVA(tva10);
@@ -929,6 +957,7 @@ public class CreationData implements CreationDataLocal {
         //                                        DESSERTS                                  |
         //==================================================================================|
         TypePlat tp06 = new TypePlat("DESSERTS");
+        tp06.setCarte(carte);
         
         Produit produi1 = new Produit("Soupe de perles de tapioca au coco et à la banane", 5f,"soupe-de-perles-de-tapioca-au-coco-et-a-la-banane.jpg");
         produi1.setCodeTVA(tva10);
@@ -1092,6 +1121,7 @@ public class CreationData implements CreationDataLocal {
         //                                        SAUCES                                    |
         //==================================================================================|
         TypePlat tp07 = new TypePlat("SAUCES");
+        tp07.setCarte(carte);
         
         //==================================================================================|
         //                                        Formules                                  |
@@ -1100,6 +1130,7 @@ public class CreationData implements CreationDataLocal {
         Formule formule01 = new Formule("Con Rong Vang / le Dragon d'Or","Entrée, Plat, Déssert" , 25, null);       
         formule01.setCodeTVA(tva10);
         formule01.setStatut(statut5001);
+        formule01.setCarte(carte);
         
         TypePlat formule01Entree = new TypePlat("Entrée dragon d'Or");        
         formule01Entree.getProduits().add(prdu3);
@@ -1122,6 +1153,7 @@ public class CreationData implements CreationDataLocal {
         Formule formule02 = new Formule("Con Mong Bien Tu Hao / le fière Goéland","Entrée, Plat", 19, null);
         formule02.setCodeTVA(tva10);
         formule02.setStatut(statut5001);
+        formule02.setCarte(carte);
         
         TypePlat formule02Entree = new TypePlat("Entrée le fière Goéland");        
         formule02Entree.getProduits().add(prdu1);
@@ -1137,6 +1169,7 @@ public class CreationData implements CreationDataLocal {
         Formule formule03 = new Formule("Con Ngua Co Canh / le Cheval ailé ","Plat, Déssert", 20, null);        
         formule03.setCodeTVA(tva10);
         formule03.setStatut(statut5001);
+        formule03.setCarte(carte);
         
         TypePlat formule03Plat = new TypePlat("Plat le fière Goéland");        
         formule03Plat.getProduits().add(produ3);
@@ -1151,6 +1184,81 @@ public class CreationData implements CreationDataLocal {
         formule03.getTypePlats().add(formule03Dessert);
         
         
+        
+         
+        //==================================================================================|
+        //                                 Creation Employes                                 |
+        //==================================================================================|
+        Restaurant rest = new  Restaurant("12555555587294","min-thung");
+          
+        
+        Poste posteServeur = new Poste("Serveur", "Service en salle");
+        Poste posteCaissier = new Poste("Caissier", "Encaissement des commandes");
+        Poste posteManager = new Poste("Manager", "Gestion du restaurant");
+        Poste posteCuisinier = new Poste("Cuisinier", "Preparation des commandes");
+        
+        Employe serveur = new Employe();
+        serveur.setNom("Dada");
+        serveur.setPassword("0001");
+        serveur.setPrenom("Yanick");
+        Date dateEmbaucheServeur = new GregorianCalendar(2017, 9, 2).getTime();
+        Date dateNaissanceServeur = new GregorianCalendar(1999, 1, 1).getTime();
+        serveur.setDateNaissance(dateNaissanceServeur);
+        serveur.setDateEmbauche(dateEmbaucheServeur);
+        serveur.setAdresse("65 boulevard bessieres 75017 paris");     
+        serveur.setPoste(posteServeur);
+        serveur.setTelephone("06.23.45.67.89");
+        serveur.setRestaurant(rest);
+        
+
+        Employe caissier = new Employe();
+        caissier.setNom("cais01");
+        caissier.setPassword("0002");
+        caissier.setPrenom("pren02");
+        Date dateEmbaucheCaissier = new GregorianCalendar(2017, 6, 2).getTime();
+        Date dateNaissanceCaissier = new GregorianCalendar(1997, 1, 1).getTime();
+        caissier.setDateNaissance(dateNaissanceCaissier);
+        caissier.setDateEmbauche(dateEmbaucheCaissier);
+        caissier.setAdresse("6 rue georges et mai politzer 75012 paris");     
+        caissier.setPoste(posteCaissier);
+        caissier.setTelephone("06.23.45.67.80");
+        caissier.setRestaurant(rest);
+        
+        
+        Employe cuisinier = new Employe();
+        cuisinier.setNom("cuis01");
+        cuisinier.setPassword("0003");
+        cuisinier.setPrenom("pren03");
+        Date dateEmbaucheCuisinier = new GregorianCalendar(2017, 9, 2).getTime();
+        Date dateNaissanceCuisinier = new GregorianCalendar(1980, 1, 1).getTime();
+        cuisinier.setDateNaissance(dateNaissanceCuisinier);
+        cuisinier.setDateEmbauche(dateEmbaucheCuisinier);
+        cuisinier.setAdresse("2 place de clichy 75009 paris");     
+        cuisinier.setPoste(posteCuisinier);
+        cuisinier.setTelephone("07.23.45.67.87");
+        cuisinier.setRestaurant(rest);
+        
+        
+        Employe manager = new Employe();
+        manager.setNom("mana01");
+        manager.setPassword("0004");
+        manager.setPrenom("pren04");
+        Date dateEmbaucheManager = new GregorianCalendar(2017, 9, 2).getTime();
+        Date dateNaissanceManager = new GregorianCalendar(1970, 1, 1).getTime();
+        manager.setDateNaissance(dateNaissanceManager);
+        manager.setDateEmbauche(dateEmbaucheManager);
+        manager.setAdresse("3 rue alfred labriere 95100 argenteuil");     
+        manager.setPoste(posteManager);
+        manager.setTelephone("06.23.45.67.85");
+        manager.setRestaurant(rest);
+               
+        
+        em.persist(serveur);
+        em.persist(caissier);
+        em.persist(cuisinier);
+        em.persist(manager);
+        
+       
         
         em.persist(formule01);
         em.persist(formule02);

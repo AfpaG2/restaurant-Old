@@ -11,6 +11,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -24,6 +25,7 @@ import javax.validation.constraints.Size;
  * @author Ibrahim Kelani <ibrahim.kelani@gmail.com>
  */
 @Entity
+@NamedQuery(name = "com.gp2.persistence.canpany.Employe.findAllEmplye", query = "select e from Employe e")
 public class Employe implements Serializable {
 
     private static final long serialVersionUID = 1L;

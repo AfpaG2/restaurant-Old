@@ -28,11 +28,7 @@ public class Restaurant implements Serializable {
     
     @Column(nullable = true, length = 400)
     private String adresse;
-    
-    @Column(nullable = true)
     private String telephone;
-    
-    @Column(nullable = true)
     private String email;
     
     // Gestion des dependances
@@ -42,6 +38,14 @@ public class Restaurant implements Serializable {
     public Restaurant() {
         employes = new ArrayList<>();
     }
+
+    public Restaurant(String numeroSiret, String nomRestaurant) {
+         this();
+        this.numeroSiret = numeroSiret;
+        this.nomRestaurant = nomRestaurant;
+    }
+    
+    
 
     public Restaurant(String numeroSiret, String nomRestaurant, String adresse, String telephone, String email) {
         this();

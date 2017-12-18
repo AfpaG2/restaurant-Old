@@ -5,7 +5,12 @@
  */
 package com.gp2.metiers;
 
+import com.gp2.persistence.canpany.Employe;
+import java.util.Collection;
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -13,7 +18,13 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class GestionPersonnel implements GestionPersonnelLocal {
+    @PersistenceContext(unitName = "restaurant-ejbPU")
+    private EntityManager em;
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+   public Collection<Employe> getEmployes(){
+       Query qr = em.createNamedQuery("com.gp2.persistence.canpany.Employe.findAllEmplye");
+        return qr.getResultList();        
+   }
+
+    
 }

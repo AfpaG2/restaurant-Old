@@ -24,8 +24,8 @@ public class CarteMainCtrl implements  SousControleur   {
     public String executer(HttpServletRequest request, HttpServletResponse response) { 
         GestionCatalogueLocal gestionCatalogue = lookupGestionCatalogueLocal();
         request.setAttribute("formules", gestionCatalogue.getAllFormules());
-        request.setAttribute("natureProduits", gestionCatalogue.getAllProduitsByNature());
-        request.setAttribute("typePlats", gestionCatalogue.getAllProduitsByTypePlat());
+//        request.setAttribute("natureProduits", gestionCatalogue.getAllProduitsByNature());
+//        request.setAttribute("typePlats", gestionCatalogue.getAllProduitsByTypePlat());
     return "/WEB-INF/client/carte.jsp";
     }
 
